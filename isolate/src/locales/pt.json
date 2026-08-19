@@ -1,0 +1,100 @@
+{
+  "Index": {
+    "meta_title": "AtendIA - Sistema de Agendamento para seu Negócio",
+    "meta_description": "Transforme o atendimento do seu salão, barbearia ou clínica em uma experiência profissional. Agendamento online, organização e automação com inteligência artificial."
+  },
+  "Navbar": {
+    "sign_in": "Entrar",
+    "sign_up": "Começar Agora",
+    "product": "Soluções",
+    "pricing": "Planos",
+    "docs": "Como Funciona",
+    "blog": "Blog",
+    "about": "Sobre"
+  },
+  "LocaleSwitcher": {
+    "button_label": "Mudar idioma"
+  },
+  "Hero": {
+    "follow_twitter": "Foco em negócios de agendamento",
+    "title": "Transforme seu atendimento em uma experiência mais <important>profissional, organizada e inteligente</important>",
+    "description": "Oferecemos sistemas personalizados de agendamento para salões, barbearias, clínicas e outros negócios que trabalham com horário marcado. Seus clientes agendam pelo celular, sua agenda fica organizada e você profissionaliza seu atendimento.",
+    "primary_button": "Ver Planos",
+    "secondary_button": "Como Funciona"
+  },
+  "Features": {
+    "section_subtitle": "Soluções",
+    "section_title": "Tudo que seu Negócio Precisa para Profissionalizar o Atendimento",
+    "section_description": "Seus clientes podem solicitar horários de forma simples, sua agenda fica centralizada, seus clientes ficam organizados e você reduz tarefas manuais com automação.",
+    "feature1_title": "Agendamento Online",
+    "feature2_title": "Agenda Organizada",
+    "feature3_title": "Clientes Organizados",
+    "feature4_title": "Automação",
+    "feature5_title": "Sistema Personalizado",
+    "feature6_title": "Suporte Dedicado",
+    "feature_description": "Seus clientes agendam pelo celular de forma simples. Você centraliza seus atendimentos. Tenha informações e histórico dos seus clientes. Reduza tarefas manuais e melhore a comunicação. Seu sistema com a identidade do seu negócio."
+  },
+  "Pricing": {
+    "section_subtitle": "Planos",
+    "section_title": "Escolha o Plano Ideal para o seu Negócio",
+    "section_description": "Planos a partir de R$ 100/mês com garantia incondicional de 30 dias.",
+    "button_text": "Começar Agora"
+  },
+  "PricingPlans": {
+    "essencial_plan_name": "Essencial",
+    "essencial_plan_description": "Ideal para quem está começando a organizar os atendimentos",
+    "profissional_plan_name": "Profissional",
+    "profissional_plan_description": "Para negócios que querem automação e melhor relacionamento",
+    "premium_plan_name": "Premium",
+    "premium_plan_description": "Solução completa com IA, automação e controle total"
+  },
+  "PricingCard": {
+    "plan_price": "R$ {price}",
+    "plan_interval_month": "/ mês",
+    "plan_interval_year": "/ ano"
+  },
+  "FAQ": {
+    "question1": "O que eu recebo ao contratar o plano?",
+    "answer1": "Você recebe um sistema de agendamento personalizado com a identidade do seu negócio, incluindo página profissional, cadastro de serviços, organização de horários, cadastro de clientes e painel administrativo. Dependendo do plano, também inclui CRM, automações e inteligência artificial.",
+    "question2": "Preciso saber programar para usar?",
+    "answer2": "Não. Nossa equipe cuida de toda a configuração e personalização do sistema. Você só precisa preencher os dados do seu negócio e começar a usar. O sistema é intuitivo e foi pensado para quem não entende de tecnologia.",
+    "question3": "Como meus clientes agendam?",
+    "answer3": "Seus clientes acessam uma página profissional com a identidade do seu negócio e podem solicitar horários de forma simples pelo celular. Tudo funciona como um aplicativo, mas sem precisar baixar nada.",
+    "question4": "O que muda entre os planos?",
+    "answer4": "O plano Essencial já oferece agendamento online, cadastro de serviços e clientes. O Profissional adiciona CRM, automações, lembretes e relatórios. O Premium inclui tudo isso mais inteligência artificial, automações avançadas e painel administrativo completo.",
+    "question5": "Tem garantia?",
+    "answer5": "Sim. Oferecemos garantia incondicional de 30 dias. Se não estiver satisfeito, devolvemos 100% do valor pago. Sem perguntas, sem burocracia.",
+    "question6": "Posso mudar de plano depois?",
+    "answer6": "Sim. Você pode fazer upgrade do seu plano a qualquer momento. A diferença de valor é proporcional ao tempo restante do ciclo atual."
+  },
+  "CTA": {
+    "title": "Pronto para profissionalizar seu atendimento?",
+    "description": "Comece hoje e veja a diferença no seu negócio. Garantia incondicional de 30 dias.",
+    "button_text": "Ver Planos"
+  },
+  "Footer": {
+    "product": "Soluções",
+    "docs": "Como Funciona",
+    "blog": "Blog",
+    "community": "Suporte",
+    "company": "Empresa",
+    "terms_of_service": "Termos de Uso",
+    "privacy_policy": "Política de Privacidade",
+    "footer_text": "© {year} {name}. Todos os direitos reservados."
+  },
+  "DashboardLayout": {
+    "meta_title": "Painel AtendIA",
+    "meta_description": "Gerencie seus clientes e configurações.",
+    "home": "Início",
+    "members": "Equipe",
+    "settings": "Configurações"
+  },
+  "DashboardIndexPage": {
+    "title_bar": "Painel",
+    "title_bar_description": "Bem-vindo ao painel da AtendIA",
+    "message_state_title": "Comece por aqui",
+    "message_state_description": "Gerencie seus clientes e acompanhe o status de cada implementação.",
+    "message_state_alternative": "",
+    "max_message": ""
+  }
+}

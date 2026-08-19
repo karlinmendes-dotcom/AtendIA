@@ -1,11 +1,11 @@
 'use client';
 
-import { api } from '@convex/_generated/api';
 import { useMutation } from 'convex/react';
 import { useState } from 'react';
 import { Section } from '@/features/landing/Section';
 import { Footer } from '@/templates/Footer';
 import { Navbar } from '@/templates/Navbar';
+import { api } from '../../../../../convex/_generated/api';
 
 type FormData = {
   businessName: string;

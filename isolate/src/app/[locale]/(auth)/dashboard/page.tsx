@@ -1,9 +1,9 @@
 'use client';
 
-import { api } from '@convex/_generated/api';
 import { useQuery } from 'convex/react';
 import { useState } from 'react';
 import { TitleBar } from '@/features/dashboard/TitleBar';
+import { api } from '../../../../../convex/_generated/api';
 
 type TabType = 'payments' | 'clients';
 
