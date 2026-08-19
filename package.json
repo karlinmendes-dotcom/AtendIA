@@ -2,7 +2,7 @@
   "name": "saas-boilerplate",
   "author": "Ixartz (https://github.com/ixartz)",
   "engines": {
-    "node": ">=24"
+    "node": ">=18"
   },
   "scripts": {
     "dev": "next dev",
