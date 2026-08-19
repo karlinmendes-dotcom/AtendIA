@@ -1,12 +1,29 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
 import { buttonVariants } from '@/components/ui/buttonVariants';
 import { PricingCard } from '@/features/billing/PricingCard';
 import { Section } from '@/features/landing/Section';
-import { Link } from '@/libs/I18nNavigation';
+import { useMercadoPago } from '@/hooks/useMercadoPago';
 import { AllPlans } from '@/utils/PricingPlans';
 
 export const Pricing = () => {
   const t = useTranslations('Pricing');
+  const { checkout, isLoading } = useMercadoPago();
+
+  const handleCheckout = async (planName: string, price: number) => {
+    const planNames: Record<string, string> = {
+      pequeno: 'Plano Pequeno AtendIA',
+      medio: 'Plano Médio AtendIA',
+      grande: 'Plano Grande AtendIA',
+    };
+
+    await checkout({
+      planId: planName,
+      planName: planNames[planName] || planName,
+      price,
+    });
+  };
 
   return (
     <Section
@@ -25,15 +42,16 @@ export const Pricing = () => {
             key={plan.name}
             plan={plan}
             button={(
-              <Link
+              <button
                 className={buttonVariants({
                   size: 'sm',
                   className: 'w-full',
                 })}
-                href="/sign-up"
+                onClick={() => handleCheckout(plan.name, plan.price)}
+                disabled={isLoading}
               >
-                {t('button_text')}
-              </Link>
+                {isLoading ? 'Carregando...' : t('button_text')}
+              </button>
             )}
           />
         ))}

@@ -2,45 +2,41 @@ import type { PricingPlan } from '@/types/Subscription';
 
 /** Pricing plans */
 export const PLAN_NAME = {
-  FREE: 'free',
-  PREMIUM: 'premium',
-  ENTERPRISE: 'enterprise',
+  PEQUENO: 'pequeno',
+  MEDIO: 'medio',
+  GRANDE: 'grande',
 } as const;
 
-/** Configuration for the Free subscription plan. */
-const FreePlan: PricingPlan = {
-  name: PLAN_NAME.FREE,
-  price: 0,
-  limits: {
-    teamMember: 2,
-    website: 2,
-    storage: 2,
-    transfer: 2,
-  },
-};
-
-/** List of paid subscription plans. */
-const PaidPlans: PricingPlan[] = [
+/** Lista de planos AtendIA */
+export const AllPlans: PricingPlan[] = [
   {
-    name: PLAN_NAME.PREMIUM,
-    price: 79, // Due to bugs in Alchemy.run, use a new `lookupKey` when changing price
+    name: PLAN_NAME.PEQUENO,
+    price: 97,
     limits: {
-      teamMember: 5,
-      website: 5,
-      storage: 5,
-      transfer: 5,
+      teamMember: 1,
+      website: 1,
+      storage: 1,
+      transfer: 1,
     },
   },
   {
-    name: PLAN_NAME.ENTERPRISE,
-    price: 199, // Due to bugs in Alchemy.run, use a new `lookupKey` when changing price
+    name: PLAN_NAME.MEDIO,
+    price: 197,
     limits: {
-      teamMember: 100,
-      website: 100,
-      storage: 100,
-      transfer: 100,
+      teamMember: 3,
+      website: 1,
+      storage: 3,
+      transfer: 3,
+    },
+  },
+  {
+    name: PLAN_NAME.GRANDE,
+    price: 397,
+    limits: {
+      teamMember: 10,
+      website: 5,
+      storage: 10,
+      transfer: 10,
     },
   },
 ];
-
-export const AllPlans = [FreePlan, ...PaidPlans];

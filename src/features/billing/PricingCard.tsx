@@ -32,7 +32,7 @@ export const PricingCard = (props: {
       {props.button}
 
       <ul className="mt-8 space-y-3">
-        <PricingFeatureList limits={props.plan.limits} />
+        <PricingFeatureList planName={props.plan.name} />
       </ul>
     </div>
   );

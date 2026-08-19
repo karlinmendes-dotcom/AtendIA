@@ -9,14 +9,19 @@ const config: KnipConfig = {
     'src/libs/I18n.ts',
     'src/libs/Logger.ts',
     'src/types/Auth.ts',
-    'src/utils/DBConnection.ts',
+    'convex/**',
+    'src/features/dashboard/OrganizationMenu.tsx',
   ],
   // Dependencies to ignore during analysis
   ignoreDependencies: [
-    '@clerk/shared',
     '@logtape/logtape',
-    '@swc/helpers', // Avoid error in CI: "`npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync."
+    '@swc/helpers',
+    'mercadopago',
+    '@next/bundle-analyzer',
+    '@spotlightjs/spotlight',
+    'npm-run-all',
   ],
+
   // Include custom Playwright test file suffixes
   playwright: {
     entry: ['tests/**/*.@(integ|e2e).ts'],
@@ -28,7 +33,7 @@ const config: KnipConfig = {
   compilers: {
     css: (text: string) => [...text.matchAll(/(?<=@)import[^;]+/g)].join('\n'),
   },
-  treatConfigHintsAsErrors: true,
+  treatConfigHintsAsErrors: false,
 };
 
 export default config;

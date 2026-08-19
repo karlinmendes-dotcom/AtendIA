@@ -1,0 +1,90 @@
+{
+  "Index": {
+    "meta_title": "AtendIA - Atendentes Virtuais com IA para seu Negócio",
+    "meta_description": "Automatize o atendimento e agendamento do seu negócio com inteligência artificial. Atendentes virtuais 24/7 no WhatsApp."
+  },
+  "Navbar": {
+    "sign_in": "Entrar",
+    "sign_up": "Começar",
+    "product": "Produto",
+    "pricing": "Preços",
+    "docs": "Como funciona",
+    "blog": "Blog",
+    "about": "Sobre"
+  },
+  "LocaleSwitcher": {
+    "button_label": "Mudar idioma"
+  },
+  "Hero": {
+    "follow_twitter": "Siga no Instagram",
+    "title": "Atendentes Virtuais com <important>Inteligência Artificial</important> para seu Negócio",
+    "description": "Automatize o atendimento, agendamento e vendas do seu salão, barbearia, clínica ou lava-jato com uma atendente virtual 24/7 no WhatsApp.",
+    "primary_button": "Ver Planos",
+    "secondary_button": "Como Funciona"
+  },
+  "Features": {
+    "section_subtitle": "Recursos",
+    "section_title": "Tudo que seu Negócio Precisa",
+    "section_description": "Uma atendente virtual inteligente que trabalha 24/7 para você nunca perder um cliente.",
+    "feature1_title": "WhatsApp com IA",
+    "feature2_title": "Agendamento Automático",
+    "feature3_title": "Lembretes Inteligentes",
+    "feature4_title": "Relatórios Detalhados",
+    "feature5_title": "Multi-usuário",
+    "feature6_title": "Suporte Dedicado",
+    "feature_description": "Atendente virtual que responde clientes, agenda serviços e envia lembretes automaticamente."
+  },
+  "Pricing": {
+    "section_subtitle": "Preços",
+    "section_title": "Escolha o Plano Ideal",
+    "section_description": "Planos a partir de R$ 97/mês com garantia incondicional de 30 dias.",
+    "button_text": "Escolher Plano"
+  },
+  "PricingPlans": {
+    "pequeno_plan_name": "Plano Pequeno",
+    "medio_plan_name": "Plano Médio",
+    "grande_plan_name": "Plano Grande"
+  },
+  "PricingCard": {
+    "pequeno_plan_description": "Para quem está começando",
+    "medio_plan_description": "Para negócios em crescimento",
+    "grande_plan_description": "Para negócios estabelecidos",
+    "plan_price": "R$ {price}",
+    "plan_interval_month": "/ mês",
+    "plan_interval_year": "/ ano"
+  },
+  "FAQ": {
+    "question": "Como funciona a garantia de 30 dias?",
+    "answer": "Se você não estiver satisfeito com o serviço nos primeiros 30 dias, devolvemos 100% do valor pago. Sem perguntas, sem burocracia."
+  },
+  "CTA": {
+    "title": "Pronto para automatizar seu atendimento?",
+    "description": "Comece hoje e veja a diferença no seu negócio.",
+    "button_text": "Ver Planos"
+  },
+  "Footer": {
+    "product": "Produto",
+    "docs": "Como Funciona",
+    "blog": "Blog",
+    "community": "Comunidade",
+    "company": "Empresa",
+    "terms_of_service": "Termos de Uso",
+    "privacy_policy": "Política de Privacidade",
+    "footer_text": "© {year} {name}. Todos os direitos reservados."
+  },
+  "DashboardLayout": {
+    "meta_title": "Painel AtendIA",
+    "meta_description": "Gerencie seus clientes e configurações.",
+    "home": "Início",
+    "members": "Equipe",
+    "settings": "Configurações"
+  },
+  "DashboardIndexPage": {
+    "title_bar": "Painel",
+    "title_bar_description": "Bem-vindo ao painel da AtendIA",
+    "message_state_title": "Comece por aqui",
+    "message_state_description": "Gerencie seus clientes e acompanhe o status de cada implementação.",
+    "message_state_alternative": "",
+    "max_message": ""
+  }
+}

@@ -52,6 +52,11 @@ local
 *.tsbuildinfo
 next-env.d.ts
 
+# Convex
+convex/_generated
+convex/*.js
+convex/*.d.ts
+
 # Database
 *.db
 

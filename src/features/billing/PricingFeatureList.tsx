@@ -1,37 +1,44 @@
-import type { PricingPlan } from '@/types/Subscription';
-import { useTranslations } from 'next-intl';
 import { PricingFeatureItem } from './PricingFeatureItem';
 
-export const PricingFeatureList = (props: Pick<PricingPlan, 'limits'>) => {
-  const t = useTranslations('PricingFeatures');
+const planFeatures: Record<string, string[]> = {
+  pequeno: [
+    'Atendente Virtual no WhatsApp',
+    'Agendamento simples',
+    '1 usuário administrador',
+    'Relatórios básicos',
+    'Suporte por email',
+  ],
+  medio: [
+    'Atendente Virtual no WhatsApp',
+    'Agendamento avançado',
+    '3 usuários administradores',
+    'Relatórios completos',
+    'Suporte prioritário',
+    'Lembretes automáticos',
+    'Integração com Google Calendar',
+  ],
+  grande: [
+    'Atendente Virtual no WhatsApp',
+    'Agendamento ilimitado',
+    'Usuários ilimitados',
+    'Relatórios avançados com IA',
+    'Suporte 24/7',
+    'Lembretes automáticos',
+    'Integração com Google Calendar',
+    'Multi-unidades',
+    'API personalizada',
+    'Treinamento dedicado',
+  ],
+};
+
+export const PricingFeatureList = (props: { planName: string }) => {
+  const features = planFeatures[props.planName] || [];
 
   return (
     <>
-      <PricingFeatureItem>
-        {t('feature_team_member', {
-          number: props.limits.teamMember,
-        })}
-      </PricingFeatureItem>
-
-      <PricingFeatureItem>
-        {t('feature_website', {
-          number: props.limits.website,
-        })}
-      </PricingFeatureItem>
-
-      <PricingFeatureItem>
-        {t('feature_storage', {
-          number: props.limits.storage,
-        })}
-      </PricingFeatureItem>
-
-      <PricingFeatureItem>
-        {t('feature_transfer', {
-          number: props.limits.transfer,
-        })}
-      </PricingFeatureItem>
-
-      <PricingFeatureItem>{t('feature_email_support')}</PricingFeatureItem>
+      {features.map(feature => (
+        <PricingFeatureItem key={feature}>{feature}</PricingFeatureItem>
+      ))}
     </>
   );
 };
