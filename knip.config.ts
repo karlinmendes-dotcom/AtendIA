@@ -11,7 +11,6 @@ const config: KnipConfig = {
     'src/types/Auth.ts',
     'convex/**',
     'src/features/dashboard/OrganizationMenu.tsx',
-    'isolate/**',
   ],
   // Dependencies to ignore during analysis
   ignoreDependencies: [
