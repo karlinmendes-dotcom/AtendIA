@@ -3,7 +3,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ConvexClientProvider } from '@/components/ConvexClientProvider';
-import { DemoBadge } from '@/components/DemoBadge';
+import { NotificationToast } from '@/components/NotificationToast';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
 
@@ -60,7 +60,7 @@ export default async function RootLayout(props: {
           <NextIntlClientProvider>
             {props.children}
 
-            <DemoBadge />
+            <NotificationToast />
           </NextIntlClientProvider>
         </ConvexClientProvider>
       </body>

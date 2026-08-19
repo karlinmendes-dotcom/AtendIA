@@ -81,4 +81,19 @@ export default defineSchema({
     key: v.string(),
     value: v.string(),
   }).index('by_key', ['key']),
+
+  // Tabela de notificações do sistema
+  notifications: defineTable({
+    title: v.string(),
+    message: v.string(),
+    type: v.union(
+      v.literal('success'),
+      v.literal('error'),
+      v.literal('info'),
+    ),
+    read: v.optional(v.boolean()),
+    createdAt: v.number(),
+  })
+    .index('by_created', ['createdAt'])
+    .index('by_type', ['type']),
 });
