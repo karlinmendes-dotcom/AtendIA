@@ -1,9 +1,0 @@
-{
-  "functions": ".",
-  "generate": {
-    "root": ".."
-  },
-  "deployment": {
-    "name": "flexible-eagle-857"
-  }
-}
