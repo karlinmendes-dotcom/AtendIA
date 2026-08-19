@@ -1,14 +1,14 @@
 {
   "Index": {
-    "meta_title": "AtendIA - Virtual Assistants with AI for your Business",
-    "meta_description": "Automate customer service and scheduling for your business with artificial intelligence. Virtual assistants 24/7 on WhatsApp."
+    "meta_title": "AtendIA - Scheduling System for Your Business",
+    "meta_description": "Transform your salon, barbershop or clinic service into a professional experience. Online scheduling, organization and automation with artificial intelligence."
   },
   "Navbar": {
     "sign_in": "Sign in",
     "sign_up": "Get Started",
-    "product": "Product",
-    "pricing": "Pricing",
-    "docs": "How it works",
+    "product": "Solutions",
+    "pricing": "Plans",
+    "docs": "How It Works",
     "blog": "Blog",
     "about": "About"
   },
@@ -16,27 +16,27 @@
     "button_label": "Change language"
   },
   "Hero": {
-    "follow_twitter": "Follow on Instagram",
-    "title": "Virtual Assistants with <important>Artificial Intelligence</important> for your Business",
-    "description": "Automate customer service, scheduling and sales for your salon, barbershop, clinic or car wash with a 24/7 virtual assistant on WhatsApp.",
+    "follow_twitter": "Focus on scheduling businesses",
+    "title": "Transform your service into a more <important>professional, organized and intelligent</important> experience",
+    "description": "We offer personalized scheduling systems for salons, barbershops, clinics and other appointment-based businesses. Your customers schedule from their phone, your calendar stays organized and you professionalize your service.",
     "primary_button": "View Plans",
-    "secondary_button": "How it Works"
+    "secondary_button": "How It Works"
   },
   "Features": {
-    "section_subtitle": "Features",
-    "section_title": "Everything your Business Needs",
-    "section_description": "An intelligent virtual assistant that works 24/7 so you never lose a customer.",
-    "feature1_title": "WhatsApp with AI",
-    "feature2_title": "Automatic Scheduling",
-    "feature3_title": "Smart Reminders",
-    "feature4_title": "Detailed Reports",
-    "feature5_title": "Multi-user",
+    "section_subtitle": "Solutions",
+    "section_title": "Everything Your Business Needs to Professionalize Service",
+    "section_description": "Your customers can request appointments easily, your calendar stays centralized, your clients stay organized and you reduce manual tasks with automation.",
+    "feature1_title": "Online Scheduling",
+    "feature2_title": "Organized Calendar",
+    "feature3_title": "Client Management",
+    "feature4_title": "Automation",
+    "feature5_title": "Custom System",
     "feature6_title": "Dedicated Support",
-    "feature_description": "Virtual assistant that answers customers, schedules services and sends reminders automatically."
+    "feature_description": "Your customers schedule from their phone easily. You centralize your appointments. Keep client information and history. Reduce manual tasks and improve communication. Your system with your business identity."
   },
   "Pricing": {
     "section_subtitle": "Plans",
-    "section_title": "Choose the Ideal Plan",
+    "section_title": "Choose the Ideal Plan for Your Business",
     "section_description": "Plans starting at R$ 100/month with unconditional 30-day guarantee.",
     "button_text": "Get Started"
   },
@@ -54,19 +54,29 @@
     "plan_interval_year": "/ year"
   },
   "FAQ": {
-    "question": "How does the 30-day guarantee work?",
-    "answer": "If you are not satisfied with the service in the first 30 days, we refund 100% of the amount paid. No questions, no bureaucracy."
+    "question1": "What do I receive when I subscribe?",
+    "answer1": "You receive a personalized scheduling system with your business identity, including a professional page, service registration, schedule organization, client registration and an admin panel. Depending on the plan, it also includes CRM, automations and artificial intelligence.",
+    "question2": "Do I need programming knowledge?",
+    "answer2": "No. Our team handles all configuration and customization. You just need to fill in your business details and start using. The system is intuitive and designed for people who don't understand technology.",
+    "question3": "How do my customers schedule?",
+    "answer3": "Your customers access a professional page with your business identity and can request appointments easily from their phone. Everything works like an app, without needing to download anything.",
+    "question4": "What changes between plans?",
+    "answer4": "The Essential plan already includes online scheduling, service and client registration. Professional adds CRM, automations, reminders and reports. Premium includes all that plus artificial intelligence, advanced automations and a complete admin panel.",
+    "question5": "Is there a guarantee?",
+    "answer5": "Yes. We offer an unconditional 30-day guarantee. If you're not satisfied, we refund 100% of the amount paid. No questions, no bureaucracy.",
+    "question6": "Can I change plans later?",
+    "answer6": "Yes. You can upgrade your plan at any time. The price difference is proportional to the remaining time in your current cycle."
   },
   "CTA": {
-    "title": "Ready to automate your customer service?",
-    "description": "Start today and see the difference in your business.",
+    "title": "Ready to professionalize your service?",
+    "description": "Start today and see the difference in your business. Unconditional 30-day guarantee.",
     "button_text": "View Plans"
   },
   "Footer": {
-    "product": "Product",
-    "docs": "How it Works",
+    "product": "Solutions",
+    "docs": "How It Works",
     "blog": "Blog",
-    "community": "Community",
+    "community": "Support",
     "company": "Company",
     "terms_of_service": "Terms of Service",
     "privacy_policy": "Privacy Policy",
