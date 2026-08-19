@@ -8,7 +8,7 @@ export function useMercadoPago() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const createPreference = useAction(api.payments.createPreference);
+  const createPreference = useAction(api.paymentsActions.createPreference);
 
   const checkout = async (params: {
     planId: string;

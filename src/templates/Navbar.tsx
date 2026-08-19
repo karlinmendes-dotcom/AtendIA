@@ -18,11 +18,8 @@ export const Navbar = () => {
             <li>
               <LocaleSwitcher />
             </li>
-            <li className="mr-2.5 ml-1">
-              <Link href="/sign-in">{t('sign_in')}</Link>
-            </li>
             <li>
-              <Link className={buttonVariants()} href="/sign-up">
+              <Link className={buttonVariants()} href="#pricing">
                 {t('sign_up')}
               </Link>
             </li>
@@ -30,23 +27,19 @@ export const Navbar = () => {
         )}
       >
         <li>
-          <Link href="/sign-up">{t('product')}</Link>
+          <Link href="#features">{t('product')}</Link>
         </li>
 
         <li>
-          <Link href="/sign-up">{t('pricing')}</Link>
+          <Link href="#pricing">{t('pricing')}</Link>
         </li>
 
         <li>
-          <Link href="/sign-up">{t('docs')}</Link>
+          <Link href="#faq">{t('docs')}</Link>
         </li>
 
         <li>
-          <Link href="/sign-up">{t('blog')}</Link>
-        </li>
-
-        <li>
-          <Link href="/sign-up">{t('about')}</Link>
+          <Link href="#faq">{t('about')}</Link>
         </li>
       </CenteredMenu>
     </Section>

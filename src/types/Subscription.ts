@@ -6,6 +6,8 @@ type PlanName = EnumValues<typeof PLAN_NAME>;
 export type PricingPlan = {
   name: PlanName;
   price: number;
+  implementationPrice: number;
+  popular?: boolean;
   limits: {
     teamMember: number;
     website: number;

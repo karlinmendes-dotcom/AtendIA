@@ -24,11 +24,6 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
   const { locale } = await props.params;
   setRequestLocale(locale);
 
-  const t = await getTranslations({
-    locale,
-    namespace: 'DashboardLayout',
-  });
-
   return (
     <>
       <div className="shadow-md">
@@ -40,15 +35,11 @@ export default async function DashboardLayout(props: DashboardLayoutProps) {
             menu={[
               {
                 href: '/dashboard',
-                label: t('home'),
-              },
-              {
-                href: '/dashboard/organization-profile/organization-members',
-                label: t('members'),
+                label: '📊 Painel',
               },
               {
                 href: '/dashboard/organization-profile',
-                label: t('settings'),
+                label: '⚙️ Configurações',
               },
             ]}
           />

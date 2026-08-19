@@ -35,20 +35,20 @@
     "feature_description": "Atendente virtual que responde clientes, agenda serviços e envia lembretes automaticamente."
   },
   "Pricing": {
-    "section_subtitle": "Preços",
+    "section_subtitle": "Planos",
     "section_title": "Escolha o Plano Ideal",
-    "section_description": "Planos a partir de R$ 97/mês com garantia incondicional de 30 dias.",
-    "button_text": "Escolher Plano"
+    "section_description": "Planos a partir de R$ 100/mês com garantia incondicional de 30 dias.",
+    "button_text": "Começar Agora"
   },
   "PricingPlans": {
-    "pequeno_plan_name": "Plano Pequeno",
-    "medio_plan_name": "Plano Médio",
-    "grande_plan_name": "Plano Grande"
+    "essencial_plan_name": "Essencial",
+    "essencial_plan_description": "Ideal para quem está começando a organizar os atendimentos",
+    "profissional_plan_name": "Profissional",
+    "profissional_plan_description": "Para negócios que querem automação e melhor relacionamento",
+    "premium_plan_name": "Premium",
+    "premium_plan_description": "Solução completa com IA, automação e controle total"
   },
   "PricingCard": {
-    "pequeno_plan_description": "Para quem está começando",
-    "medio_plan_description": "Para negócios em crescimento",
-    "grande_plan_description": "Para negócios estabelecidos",
     "plan_price": "R$ {price}",
     "plan_interval_month": "/ mês",
     "plan_interval_year": "/ ano"

@@ -1,23 +1,36 @@
-import { AppConfig } from '@/utils/AppConfig';
-
 export const Logo = (props: {
   isTextHidden?: boolean;
 }) => (
-  <div className="flex items-center text-xl font-semibold">
-    <svg
-      className="mr-1 size-8 stroke-current stroke-2"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+  <div className="flex items-center gap-2 text-xl font-bold">
+    <div className="
+      flex size-8 items-center justify-center rounded-lg bg-primary
+      text-primary-foreground
+    "
     >
-      <path d="M0 0h24v24H0z" stroke="none" />
-      <rect x="3" y="12" width="6" height="8" rx="1" />
-      <rect x="9" y="8" width="6" height="12" rx="1" />
-      <rect x="15" y="4" width="6" height="16" rx="1" />
-      <path d="M4 20h14" />
-    </svg>
-    {!props.isTextHidden && AppConfig.name}
+      <svg
+        className="size-5"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M0 0h24v24H0z" stroke="none" />
+        <path d="M12 8V4H8" />
+        <rect width="16" height="12" x="4" y="8" rx="2" />
+        <path d="M2 14h2" />
+        <path d="M20 14h2" />
+        <path d="M15 13v2" />
+        <path d="M9 13v2" />
+      </svg>
+    </div>
+    {!props.isTextHidden && (
+      <span>
+        Atend
+        <span className="text-primary">IA</span>
+      </span>
+    )}
   </div>
 );

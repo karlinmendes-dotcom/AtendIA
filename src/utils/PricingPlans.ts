@@ -1,17 +1,16 @@
 import type { PricingPlan } from '@/types/Subscription';
 
-/** Pricing plans */
 export const PLAN_NAME = {
-  PEQUENO: 'pequeno',
-  MEDIO: 'medio',
-  GRANDE: 'grande',
+  ESSENCIAL: 'essencial',
+  PROFISSIONAL: 'profissional',
+  PREMIUM: 'premium',
 } as const;
 
-/** Lista de planos AtendIA */
 export const AllPlans: PricingPlan[] = [
   {
-    name: PLAN_NAME.PEQUENO,
-    price: 97,
+    name: PLAN_NAME.ESSENCIAL,
+    price: 100,
+    implementationPrice: 450,
     limits: {
       teamMember: 1,
       website: 1,
@@ -20,8 +19,10 @@ export const AllPlans: PricingPlan[] = [
     },
   },
   {
-    name: PLAN_NAME.MEDIO,
-    price: 197,
+    name: PLAN_NAME.PROFISSIONAL,
+    price: 150,
+    implementationPrice: 750,
+    popular: true,
     limits: {
       teamMember: 3,
       website: 1,
@@ -30,8 +31,9 @@ export const AllPlans: PricingPlan[] = [
     },
   },
   {
-    name: PLAN_NAME.GRANDE,
-    price: 397,
+    name: PLAN_NAME.PREMIUM,
+    price: 200,
+    implementationPrice: 1000,
     limits: {
       teamMember: 10,
       website: 5,

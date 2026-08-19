@@ -35,20 +35,20 @@
     "feature_description": "Virtual assistant that answers customers, schedules services and sends reminders automatically."
   },
   "Pricing": {
-    "section_subtitle": "Pricing",
+    "section_subtitle": "Plans",
     "section_title": "Choose the Ideal Plan",
-    "section_description": "Plans starting at R$ 97/month with unconditional 30-day guarantee.",
-    "button_text": "Choose Plan"
+    "section_description": "Plans starting at R$ 100/month with unconditional 30-day guarantee.",
+    "button_text": "Get Started"
   },
   "PricingPlans": {
-    "pequeno_plan_name": "Small Plan",
-    "medio_plan_name": "Medium Plan",
-    "grande_plan_name": "Large Plan"
+    "essencial_plan_name": "Essential",
+    "essencial_plan_description": "Ideal for those starting to organize their services",
+    "profissional_plan_name": "Professional",
+    "profissional_plan_description": "For businesses wanting automation and better customer relationships",
+    "premium_plan_name": "Premium",
+    "premium_plan_description": "Complete solution with AI, automation and full control"
   },
   "PricingCard": {
-    "pequeno_plan_description": "For those starting out",
-    "medio_plan_description": "For growing businesses",
-    "grande_plan_description": "For established businesses",
     "plan_price": "R$ {price}",
     "plan_interval_month": "/ month",
     "plan_interval_year": "/ year"
