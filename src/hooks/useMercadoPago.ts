@@ -1,8 +1,8 @@
 'use client';
 
+import { api } from '@convex/_generated/api';
 import { useAction } from 'convex/react';
 import { useState } from 'react';
-import { api } from '../../convex/_generated/api';
 
 export function useMercadoPago() {
   const [isLoading, setIsLoading] = useState(false);

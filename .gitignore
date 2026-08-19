@@ -52,10 +52,8 @@ local
 *.tsbuildinfo
 next-env.d.ts
 
-# Convex
-convex/_generated
-convex/*.js
-convex/*.d.ts
+# Convex - keep _generated in repo for builds
+# convex/_generated
 
 # Database
 *.db
