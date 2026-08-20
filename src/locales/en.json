@@ -27,12 +27,17 @@
     "section_title": "Everything Your Business Needs to Professionalize Service",
     "section_description": "Your customers can request appointments easily, your calendar stays centralized, your clients stay organized and you reduce manual tasks with automation.",
     "feature1_title": "Online Scheduling",
+    "feature1_description": "Your customers schedule from their phone anytime, anywhere. No calls, no waiting, no wasted time. Reduce no-shows with automatic reminders and keep your calendar full.",
     "feature2_title": "Organized Calendar",
+    "feature2_description": "All your appointments centralized in one place. View your week, block unavailable hours and manage your team intelligently.",
     "feature3_title": "Client Management",
+    "feature3_description": "Complete registration for each client with appointment history, preferences and important information. Never lose data or forget client details again.",
     "feature4_title": "Automation",
+    "feature4_description": "Automatic confirmations, WhatsApp reminders, quick responses and smart workflows. Reduce manual work and focus on what really matters: your clients.",
     "feature5_title": "Custom System",
+    "feature5_description": "Your system with your business visual identity. Colors, logo, layout and information adapted to convey professionalism and trust to your clients.",
     "feature6_title": "Dedicated Support",
-    "feature_description": "Your customers schedule from their phone easily. You centralize your appointments. Keep client information and history. Reduce manual tasks and improve communication. Your system with your business identity."
+    "feature6_description": "Our team handles all configuration, updates and maintenance. You don't need to worry about anything technical — just use it and focus on your business."
   },
   "Pricing": {
     "section_subtitle": "Plans",

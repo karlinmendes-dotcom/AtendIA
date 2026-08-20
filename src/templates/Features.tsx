@@ -16,13 +16,13 @@ const featureIcons = [
 export const Features = () => {
   const t = useTranslations('Features');
 
-  const featureTitles = [
-    t('feature1_title'),
-    t('feature2_title'),
-    t('feature3_title'),
-    t('feature4_title'),
-    t('feature5_title'),
-    t('feature6_title'),
+  const features = [
+    { title: t('feature1_title'), description: t('feature1_description') },
+    { title: t('feature2_title'), description: t('feature2_description') },
+    { title: t('feature3_title'), description: t('feature3_description') },
+    { title: t('feature4_title'), description: t('feature4_description') },
+    { title: t('feature5_title'), description: t('feature5_description') },
+    { title: t('feature6_title'), description: t('feature6_description') },
   ];
 
   return (
@@ -37,19 +37,25 @@ export const Features = () => {
           md:grid-cols-3
         "
         >
-          {featureIcons.map((Icon, i) => (
-            <FeatureCard
-              key={featureTitles[i] ?? `feature-${i}`}
-              icon={(
-                <Icon
-                  className="size-6 stroke-primary-foreground stroke-2"
-                />
-              )}
-              title={featureTitles[i] ?? ''}
-            >
-              {t('feature_description')}
-            </FeatureCard>
-          ))}
+          {featureIcons.map((Icon, i) => {
+            const feature = features[i];
+            if (!feature) {
+              return null;
+            }
+            return (
+              <FeatureCard
+                key={feature.title}
+                icon={(
+                  <Icon
+                    className="size-6 stroke-primary-foreground stroke-2"
+                  />
+                )}
+                title={feature.title}
+              >
+                {feature.description}
+              </FeatureCard>
+            );
+          })}
         </div>
       </Section>
     </Background>

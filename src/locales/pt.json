@@ -27,12 +27,17 @@
     "section_title": "Tudo que seu Negócio Precisa para Profissionalizar o Atendimento",
     "section_description": "Seus clientes podem solicitar horários de forma simples, sua agenda fica centralizada, seus clientes ficam organizados e você reduz tarefas manuais com automação.",
     "feature1_title": "Agendamento Online",
+    "feature1_description": "Seus clientes agendam pelo celular de forma simples, a qualquer hora. Sem ligações, sem filas, sem perder tempo. Reduza faltas com lembretes automáticos e tenha sua agenda sempre completa.",
     "feature2_title": "Agenda Organizada",
+    "feature2_description": "Todos os seus atendimentos centralizados em um só lugar. Visualize sua semana, bloqueie horários indisponíveis e gerencie sua equipe de forma inteligente.",
     "feature3_title": "Clientes Organizados",
+    "feature3_description": "Cadastro completo de cada cliente com histórico de atendimentos, preferências e informações importantes. Nunca mais perca dados ou esqueça detalhes de um cliente.",
     "feature4_title": "Automação",
+    "feature4_description": "Confirmações automáticas, lembretes por WhatsApp, respostas rápidas e fluxos inteligentes. Reduza o trabalho manual e foque no que realmente importa: seus clientes.",
     "feature5_title": "Sistema Personalizado",
+    "feature5_description": "Seu sistema com a identidade visual do seu negócio. Cores, logo, layout e informações adaptados para transmitir profissionalismo e confiança aos seus clientes.",
     "feature6_title": "Suporte Dedicado",
-    "feature_description": "Seus clientes agendam pelo celular de forma simples. Você centraliza seus atendimentos. Tenha informações e histórico dos seus clientes. Reduza tarefas manuais e melhore a comunicação. Seu sistema com a identidade do seu negócio."
+    "feature6_description": "Nossa equipe cuida de toda a configuração, atualizações e manutenção. Você não precisa se preocupar com nada técnico — é só usar e focar no seu negócio."
   },
   "Pricing": {
     "section_subtitle": "Planos",

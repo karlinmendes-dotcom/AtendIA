@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { ChatBot } from '@/components/ChatBot';
 import { ConvexClientProvider } from '@/components/ConvexClientProvider';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
@@ -58,6 +59,7 @@ export default async function RootLayout(props: {
         <ConvexClientProvider>
           <NextIntlClientProvider>
             {props.children}
+            <ChatBot />
           </NextIntlClientProvider>
         </ConvexClientProvider>
       </body>
