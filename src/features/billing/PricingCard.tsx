@@ -2,6 +2,18 @@ import type { PricingPlan } from '@/types/Subscription';
 import { useTranslations } from 'next-intl';
 import { PricingFeatureList } from './PricingFeatureList';
 
+const tierLabels: Record<string, string> = {
+  essencial: 'Básico',
+  profissional: 'Mais Escolhido',
+  premium: 'Completo',
+};
+
+const tierColors: Record<string, string> = {
+  essencial: 'border-border',
+  profissional: 'border-2 border-primary shadow-lg',
+  premium: 'border-2 border-primary shadow-xl',
+};
+
 export const PricingCard = (props: {
   plan: PricingPlan;
   button: React.ReactNode;
@@ -11,24 +23,31 @@ export const PricingCard = (props: {
   return (
     <div
       className={`
-        relative rounded-2xl border px-6 py-8 text-center transition-shadow
-        ${props.plan.popular
-      ? 'scale-[1.02] border-2 border-primary shadow-lg'
-      : 'border-border'
-    }
+        relative flex flex-col rounded-2xl border px-6 py-8 text-center
+        transition-shadow
+        ${tierColors[props.plan.name] || 'border-border'}
+        ${props.plan.popular ? 'scale-[1.02]' : ''}
+        ${props.plan.name === 'premium'
+      ? `bg-linear-to-b from-primary/5 to-transparent`
+      : ''}
       `}
     >
-      {props.plan.popular && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="
-            rounded-full bg-primary px-4 py-1 text-xs font-bold
-            text-primary-foreground
-          "
-          >
-            ⭐ Mais Escolhido
-          </span>
-        </div>
-      )}
+      {/* Badge do plano */}
+      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+        <span
+          className={`
+            rounded-full px-4 py-1 text-xs font-bold
+            ${props.plan.popular
+      ? 'bg-primary text-primary-foreground'
+      : props.plan.name === 'premium'
+        ? 'bg-linear-to-r from-primary to-blue-600 text-white'
+        : 'bg-muted text-muted-foreground'
+    }
+          `}
+        >
+          {tierLabels[props.plan.name] || props.plan.name}
+        </span>
+      </div>
 
       <div className="text-lg font-semibold">
         {tPlans(`${props.plan.name}_plan_name`)}
@@ -66,7 +85,7 @@ export const PricingCard = (props: {
 
       <div className="mt-5">{props.button}</div>
 
-      <ul className="mt-8 space-y-3">
+      <ul className="mt-8 flex-1 space-y-3 text-left">
         <PricingFeatureList planName={props.plan.name} />
       </ul>
     </div>

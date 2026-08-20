@@ -37,16 +37,16 @@
   "Pricing": {
     "section_subtitle": "Planos",
     "section_title": "Escolha o Plano Ideal para o seu Negócio",
-    "section_description": "Planos a partir de R$ 100/mês com garantia incondicional de 30 dias.",
+    "section_description": "Planos a partir de R$ 97/mês com garantia incondicional de 30 dias.",
     "button_text": "Começar Agora"
   },
   "PricingPlans": {
     "essencial_plan_name": "Essencial",
-    "essencial_plan_description": "Ideal para quem está começando a organizar os atendimentos",
+    "essencial_plan_description": "Agendamento online simples e direto, sem IA",
     "profissional_plan_name": "Profissional",
-    "profissional_plan_description": "Para negócios que querem automação e melhor relacionamento",
+    "profissional_plan_description": "Agendamento + 1 IA Gemini no painel + CRM + automações",
     "premium_plan_name": "Premium",
-    "premium_plan_description": "Solução completa com IA, automação e controle total"
+    "premium_plan_description": "2 IAs Gemini + Meta API + campanhas + tudo incluso"
   },
   "PricingCard": {
     "plan_price": "R$ {price}",

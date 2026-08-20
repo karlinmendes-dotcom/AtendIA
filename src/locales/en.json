@@ -37,16 +37,16 @@
   "Pricing": {
     "section_subtitle": "Plans",
     "section_title": "Choose the Ideal Plan for Your Business",
-    "section_description": "Plans starting at R$ 100/month with unconditional 30-day guarantee.",
+    "section_description": "Plans starting at R$ 97/month with unconditional 30-day guarantee.",
     "button_text": "Get Started"
   },
   "PricingPlans": {
     "essencial_plan_name": "Essential",
-    "essencial_plan_description": "Ideal for those starting to organize their services",
+    "essencial_plan_description": "Simple online scheduling, no AI",
     "profissional_plan_name": "Professional",
-    "profissional_plan_description": "For businesses wanting automation and better customer relationships",
+    "profissional_plan_description": "Scheduling + 1 Gemini AI in dashboard + CRM + automations",
     "premium_plan_name": "Premium",
-    "premium_plan_description": "Complete solution with AI, automation and full control"
+    "premium_plan_description": "2 Gemini AIs + Meta API + campaigns + everything included"
   },
   "PricingCard": {
     "plan_price": "R$ {price}",
