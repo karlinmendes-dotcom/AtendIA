@@ -21,7 +21,8 @@ export const createPreference = action({
 
     // Dynamic import - access via default or named exports
     const mpModule = await import('mercadopago');
-    const mp = mpModule.default || mpModule;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const mp: any = (mpModule as any).default || mpModule;
 
     const client = new mp.MercadoPagoConfig({
       accessToken,

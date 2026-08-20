@@ -3,6 +3,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ChatBot } from '@/components/ChatBot';
+import { CookieConsent } from '@/components/CookieConsent';
 import { ConvexClientProvider } from '@/components/ConvexClientProvider';
 import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
@@ -60,6 +61,7 @@ export default async function RootLayout(props: {
           <NextIntlClientProvider>
             {props.children}
             <ChatBot />
+            <CookieConsent />
           </NextIntlClientProvider>
         </ConvexClientProvider>
       </body>
