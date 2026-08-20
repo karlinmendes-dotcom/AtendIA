@@ -1,52 +1,53 @@
 import { PricingFeatureItem } from './PricingFeatureItem';
+import { GoogleGeminiIcon } from '@/components/BrandIcons';
 
-const planFeatures: Record<string, string[]> = {
+const planFeatures: Record<string, Array<{ text: string; isAI?: boolean }>> = {
   essencial: [
-    'Sistema de agendamento online',
-    'Página profissional de agendamento',
-    'Cadastro de serviços e preços',
-    'Organização de horários de atendimento',
-    'Configuração dos dias de funcionamento',
-    'Cadastro e gerenciamento de clientes',
-    'Painel administrativo básico',
-    'Visualização dos agendamentos do dia',
-    'Personalização com identidade do negócio',
-    'Responsividade para celular',
-    'Hospedagem e infraestrutura incluída',
-    'Suporte técnico',
+    { text: 'Sistema de agendamento online' },
+    { text: 'Página profissional de agendamento' },
+    { text: 'Cadastro de serviços e preços' },
+    { text: 'Organização de horários de atendimento' },
+    { text: 'Configuração dos dias de funcionamento' },
+    { text: 'Cadastro e gerenciamento de clientes' },
+    { text: 'Painel administrativo básico' },
+    { text: 'Visualização dos agendamentos do dia' },
+    { text: 'Personalização com identidade do negócio' },
+    { text: 'Responsividade para celular' },
+    { text: 'Hospedagem e infraestrutura incluída' },
+    { text: 'Suporte técnico' },
   ],
   profissional: [
-    'Tudo do Plano Essencial',
-    '🤖 1 Assistente de IA no painel (Gemini)',
-    'CRM completo de clientes',
-    'Histórico e relacionamento com clientes',
-    'Automação de confirmações por WhatsApp',
-    'Lembretes automáticos de agendamento',
-    'Gestão avançada da agenda',
-    'Regras personalizadas do estabelecimento',
-    'Relatórios e indicadores básicos',
-    'Integração com API Meta (WhatsApp)',
-    'Página profissional mais completa',
-    'Personalização visual avançada',
-    'Suporte prioritário',
-    'Manutenção e atualizações contínuas',
+    { text: 'Tudo do Plano Essencial' },
+    { text: '1 Assistente de IA Gemini no painel', isAI: true },
+    { text: 'CRM completo de clientes' },
+    { text: 'Histórico e relacionamento com clientes' },
+    { text: 'Automação de confirmações por WhatsApp' },
+    { text: 'Lembretes automáticos de agendamento' },
+    { text: 'Gestão avançada da agenda' },
+    { text: 'Regras personalizadas do estabelecimento' },
+    { text: 'Relatórios e indicadores básicos' },
+    { text: 'Integração com API Meta (WhatsApp)' },
+    { text: 'Página profissional mais completa' },
+    { text: 'Personalização visual avançada' },
+    { text: 'Suporte prioritário' },
+    { text: 'Manutenção e atualizações contínuas' },
   ],
   premium: [
-    'Tudo do Plano Profissional',
-    '🤖 2 Assistentes de IA Gemini incluídos',
-    'IA para atendimento direto ao cliente',
-    'IA para automações e controle no painel',
-    'Automações avançadas de comunicação',
-    'Disparo automático via API oficial Meta',
-    'Campanhas de marketing automatizadas',
-    'CRM completo com inteligência',
-    'Relatórios e indicadores avançados',
-    'Painel administrativo completo',
-    'Personalização total da plataforma',
-    'Integrações premium disponíveis',
-    'Configurações específicas por negócio',
-    'Suporte dedicado e prioritário',
-    'Manutenção contínua e atualizações',
+    { text: 'Tudo do Plano Profissional' },
+    { text: '2 Assistentes de IA Gemini incluídos', isAI: true },
+    { text: 'IA para atendimento direto ao cliente', isAI: true },
+    { text: 'IA para automações e controle no painel', isAI: true },
+    { text: 'Automações avançadas de comunicação' },
+    { text: 'Disparo automático via API oficial Meta' },
+    { text: 'Campanhas de marketing automatizadas' },
+    { text: 'CRM completo com inteligência' },
+    { text: 'Relatórios e indicadores avançados' },
+    { text: 'Painel administrativo completo' },
+    { text: 'Personalização total da plataforma' },
+    { text: 'Integrações premium disponíveis' },
+    { text: 'Configurações específicas por negócio' },
+    { text: 'Suporte dedicado e prioritário' },
+    { text: 'Manutenção contínua e atualizações' },
   ],
 };
 
@@ -57,10 +58,11 @@ export const PricingFeatureList = (props: { planName: string }) => {
     <>
       {features.map(feature => (
         <PricingFeatureItem
-          key={feature}
-          highlighted={feature.startsWith('🤖')}
+          key={feature.text}
+          highlighted={feature.isAI}
+          icon={feature.isAI ? <GoogleGeminiIcon className="size-4 text-[#4285F4]" /> : undefined}
         >
-          {feature}
+          {feature.text}
         </PricingFeatureItem>
       ))}
     </>

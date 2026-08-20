@@ -5,14 +5,15 @@ import { useTranslations } from 'next-intl';
 import { Section } from '@/features/landing/Section';
 import { Link } from '@/libs/I18nNavigation';
 import { CalendarCheck, Users, BarChart3, Bot, Shield, Clock, Star } from 'lucide-react';
+import { WhatsAppIcon, GoogleGeminiIcon, MercadoPagoIcon, CalendarIcon, CRMIcon, AIIcon } from '@/components/BrandIcons';
 
 const techIcons = [
-  { name: 'Banco de Dados', icon: '⚡' },
-  { name: 'Inteligência Artificial', icon: '🧠' },
-  { name: 'WhatsApp API', icon: '💬' },
-  { name: 'Pagamentos', icon: '💳' },
-  { name: 'Agendamento', icon: '📅' },
-  { name: 'CRM', icon: '👥' },
+  { name: 'Agendamento', Icon: CalendarIcon, color: 'text-blue-400' },
+  { name: 'Inteligência Artificial', Icon: AIIcon, color: 'text-purple-400' },
+  { name: 'WhatsApp API', Icon: WhatsAppIcon, color: 'text-[#25D366]' },
+  { name: 'Pagamentos', Icon: MercadoPagoIcon, color: 'text-[#009EE3]' },
+  { name: 'IA Gemini', Icon: GoogleGeminiIcon, color: 'text-orange-400' },
+  { name: 'CRM', Icon: CRMIcon, color: 'text-cyan-400' },
 ];
 
 export const Hero = () => {
@@ -135,9 +136,9 @@ export const Hero = () => {
           {techIcons.map(tech => (
             <div
               key={tech.name}
-              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 shadow-sm transition-all hover:border-[#2dd4bf]/30 hover:bg-white/10"
+              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 shadow-sm transition-all hover:border-[#2dd4bf]/30 hover:bg-white/10"
             >
-              <span className="text-lg">{tech.icon}</span>
+              <tech.Icon className={`size-5 ${tech.color}`} />
               <span className="text-xs font-medium text-gray-400 group-hover:text-white">{tech.name}</span>
             </div>
           ))}
