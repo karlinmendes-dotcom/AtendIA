@@ -2,8 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { badgeVariants } from '@/components/ui/badgeVariants';
-import { buttonVariants } from '@/components/ui/buttonVariants';
 import { Section } from '@/features/landing/Section';
 import { Link } from '@/libs/I18nNavigation';
 import { CalendarCheck, Users, BarChart3, Bot, Shield, Clock, Star } from 'lucide-react';
@@ -21,20 +19,20 @@ export const Hero = () => {
   const t = useTranslations('Hero');
 
   return (
-    <Section className="relative overflow-hidden py-20 sm:py-28">
+    <Section className="relative overflow-hidden py-20 sm:py-28 bg-black">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.12, scale: 1 }}
+          animate={{ opacity: 0.15, scale: 1 }}
           transition={{ duration: 2, ease: 'easeOut' }}
-          className="absolute -top-40 -right-40 size-[500px] rounded-full bg-blue-500 blur-[150px]"
+          className="absolute -top-40 -right-40 size-[500px] rounded-full bg-[#2dd4bf] blur-[150px]"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.08, scale: 1 }}
+          animate={{ opacity: 0.1, scale: 1 }}
           transition={{ duration: 2, delay: 0.3, ease: 'easeOut' }}
-          className="absolute -bottom-40 -left-40 size-[400px] rounded-full bg-cyan-400 blur-[150px]"
+          className="absolute -bottom-40 -left-40 size-[400px] rounded-full bg-blue-500 blur-[150px]"
         />
       </div>
 
@@ -46,7 +44,7 @@ export const Hero = () => {
           transition={{ duration: 0.6 }}
           className="mb-6 text-center"
         >
-          <span className={badgeVariants()}>
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#2dd4bf]/10 px-4 py-1.5 text-sm font-medium text-[#2dd4bf]">
             Solução Completa para Agendamento
           </span>
         </motion.div>
@@ -56,15 +54,12 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-center text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl"
+          className="text-center text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
         >
-          {t.rich('title', {
-            important: chunks => (
-              <span className="bg-linear-to-r from-blue-600 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
-                {chunks}
-              </span>
-            ),
-          })}
+          Transforme seu atendimento em uma experiência mais{' '}
+          <span className="bg-linear-to-r from-[#2dd4bf] to-blue-400 bg-clip-text text-transparent">
+            profissional, organizada e inteligente
+          </span>
         </motion.h1>
 
         {/* Description */}
@@ -72,7 +67,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mx-auto mt-6 max-w-2xl text-center text-lg text-muted-foreground"
+          className="mx-auto mt-6 max-w-2xl text-center text-lg text-gray-400"
         >
           {t('description')}
         </motion.p>
@@ -85,18 +80,26 @@ export const Hero = () => {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Link
-            className={buttonVariants({ size: 'lg', className: 'shadow-lg shadow-blue-500/25 transition-all hover:shadow-xl hover:shadow-blue-500/30 hover:scale-[1.02]' })}
+            className="
+              inline-flex items-center gap-2 rounded-full bg-[#2dd4bf] px-8 py-4
+              text-lg font-bold text-black shadow-lg shadow-[#2dd4bf]/25
+              transition-all hover:scale-[1.03] hover:shadow-xl hover:shadow-[#2dd4bf]/30
+            "
             href="/#pricing"
           >
             {t('primary_button')}
-            <svg className="ml-1 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg className="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M0 0h24v24H0z" stroke="none" />
               <path d="m9 18 6-6-6-6" />
             </svg>
           </Link>
 
           <a
-            className={buttonVariants({ variant: 'outline', size: 'lg', className: 'transition-all hover:scale-[1.02]' })}
+            className="
+              inline-flex items-center gap-2 rounded-full border border-white/20
+              bg-transparent px-8 py-4 text-lg font-medium text-white
+              transition-all hover:bg-white/10
+            "
             href="#features"
           >
             {t('secondary_button')}
@@ -108,7 +111,7 @@ export const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
+          className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400"
         >
           {[
             { icon: Shield, text: 'Garantia 30 dias' },
@@ -116,7 +119,7 @@ export const Hero = () => {
             { icon: Star, text: 'Suporte dedicado' },
           ].map(item => (
             <div key={item.text} className="flex items-center gap-2">
-              <item.icon className="size-4 text-blue-500" />
+              <item.icon className="size-4 text-[#2dd4bf]" />
               {item.text}
             </div>
           ))}
@@ -132,10 +135,10 @@ export const Hero = () => {
           {techIcons.map(tech => (
             <div
               key={tech.name}
-              className="group flex items-center gap-2 rounded-full border border-border bg-card/50 px-5 py-2 shadow-sm transition-all hover:shadow-md hover:border-blue-500/30"
+              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2 shadow-sm transition-all hover:border-[#2dd4bf]/30 hover:bg-white/10"
             >
               <span className="text-lg">{tech.icon}</span>
-              <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground">{tech.name}</span>
+              <span className="text-xs font-medium text-gray-400 group-hover:text-white">{tech.name}</span>
             </div>
           ))}
         </motion.div>
@@ -150,37 +153,37 @@ export const Hero = () => {
           {/* Laptop mockup */}
           <div className="relative mx-auto max-w-4xl">
             {/* Laptop screen */}
-            <div className="overflow-hidden rounded-t-2xl border border-border bg-card shadow-2xl shadow-blue-500/10">
+            <div className="overflow-hidden rounded-t-2xl border border-white/10 bg-[#0a0a0a] shadow-2xl shadow-[#2dd4bf]/10">
               {/* Browser bar */}
-              <div className="flex items-center gap-2 border-b border-border bg-muted/50 px-4 py-3">
+              <div className="flex items-center gap-2 border-b border-white/10 bg-[#111] px-4 py-3">
                 <div className="flex gap-1.5">
-                  <div className="size-3 rounded-full bg-red-400" />
-                  <div className="size-3 rounded-full bg-yellow-400" />
-                  <div className="size-3 rounded-full bg-green-400" />
+                  <div className="size-3 rounded-full bg-red-500" />
+                  <div className="size-3 rounded-full bg-yellow-500" />
+                  <div className="size-3 rounded-full bg-green-500" />
                 </div>
-                <div className="ml-4 flex-1 rounded-md bg-background px-3 py-1 text-xs text-muted-foreground">
+                <div className="ml-4 flex-1 rounded-md bg-[#1a1a1a] px-3 py-1 text-xs text-gray-500">
                   app.atendia.com.br/dashboard
                 </div>
               </div>
               {/* Dashboard content */}
               <div className="grid grid-cols-4 gap-3 p-4">
                 {[
-                  { label: 'Agendamentos', value: '12', icon: CalendarCheck, color: 'text-blue-500' },
-                  { label: 'Clientes', value: '248', icon: Users, color: 'text-cyan-500' },
-                  { label: 'Faturamento', value: 'R$ 18k', icon: BarChart3, color: 'text-green-500' },
-                  { label: 'IA Ativa', value: 'Online', icon: Bot, color: 'text-purple-500' },
+                  { label: 'Agendamentos', value: '12', icon: CalendarCheck, color: 'text-[#2dd4bf]' },
+                  { label: 'Clientes', value: '248', icon: Users, color: 'text-blue-400' },
+                  { label: 'Faturamento', value: 'R$ 18k', icon: BarChart3, color: 'text-green-400' },
+                  { label: 'IA Ativa', value: 'Online', icon: Bot, color: 'text-purple-400' },
                 ].map(stat => (
-                  <div key={stat.label} className="rounded-xl border border-border bg-background p-3">
+                  <div key={stat.label} className="rounded-xl border border-white/10 bg-[#111] p-3">
                     <div className="flex items-center justify-between">
-                      <p className="text-[10px] text-muted-foreground">{stat.label}</p>
+                      <p className="text-[10px] text-gray-500">{stat.label}</p>
                       <stat.icon className={`size-3.5 ${stat.color}`} />
                     </div>
-                    <p className="mt-1.5 text-lg font-bold">{stat.value}</p>
+                    <p className="mt-1.5 text-lg font-bold text-white">{stat.value}</p>
                   </div>
                 ))}
               </div>
               {/* Schedule mini grid */}
-              <div className="border-t border-border p-4">
+              <div className="border-t border-white/10 p-4">
                 <div className="grid grid-cols-7 gap-1.5">
                   {Array.from({ length: 14 }, (_, i) => {
                     const filled = [0, 2, 4, 6, 9, 11, 13].includes(i);
@@ -188,7 +191,7 @@ export const Hero = () => {
                       <div
                         key={i}
                         className={`h-8 rounded-md text-[9px] font-medium flex items-center justify-center ${
-                          filled ? 'bg-blue-500/15 text-blue-600' : 'bg-muted/30 text-muted-foreground/50'
+                          filled ? 'bg-[#2dd4bf]/15 text-[#2dd4bf]' : 'bg-[#1a1a1a] text-gray-600'
                         }`}
                       >
                         {filled ? '●' : '○'}
@@ -199,8 +202,8 @@ export const Hero = () => {
               </div>
             </div>
             {/* Laptop base */}
-            <div className="mx-auto h-3 w-full rounded-b-2xl bg-gradient-to-b from-border to-muted/50" />
-            <div className="mx-auto h-1 w-1/3 rounded-b-lg bg-border" />
+            <div className="mx-auto h-3 w-full rounded-b-2xl bg-gradient-to-b from-white/10 to-[#111]" />
+            <div className="mx-auto h-1 w-1/3 rounded-b-lg bg-white/10" />
           </div>
 
           {/* Phone mockup (overlapping) */}
@@ -210,19 +213,19 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="absolute -right-4 bottom-0 hidden lg:block"
           >
-            <div className="w-48 overflow-hidden rounded-[1.5rem] border-4 border-gray-800 bg-white shadow-2xl">
-              <div className="bg-gray-100 px-3 py-1.5 text-[8px] text-gray-500">9:41</div>
+            <div className="w-48 overflow-hidden rounded-[1.5rem] border-4 border-gray-800 bg-[#111] shadow-2xl">
+              <div className="bg-[#1a1a1a] px-3 py-1.5 text-[8px] text-gray-500">9:41</div>
               <div className="p-3">
                 <div className="mb-2 text-center">
-                  <div className="mx-auto mb-1 flex size-7 items-center justify-center rounded-lg bg-blue-500 text-white">
+                  <div className="mx-auto mb-1 flex size-7 items-center justify-center rounded-lg bg-[#2dd4bf] text-black">
                     <Bot className="size-3.5" />
                   </div>
-                  <p className="text-[9px] font-bold text-gray-800">Salão Beleza</p>
+                  <p className="text-[9px] font-bold text-white">Salão Beleza</p>
                 </div>
                 {['Corte R$ 85', 'Manicure R$ 45'].map(s => (
-                  <div key={s} className="mb-1.5 flex items-center justify-between rounded-md border border-gray-100 bg-gray-50 p-2">
-                    <span className="text-[8px] font-medium text-gray-700">{s}</span>
-                    <span className="rounded bg-blue-500 px-1.5 py-0.5 text-[7px] font-bold text-white">Agendar</span>
+                  <div key={s} className="mb-1.5 flex items-center justify-between rounded-md border border-white/10 bg-[#1a1a1a] p-2">
+                    <span className="text-[8px] font-medium text-gray-300">{s}</span>
+                    <span className="rounded bg-[#2dd4bf] px-1.5 py-0.5 text-[7px] font-bold text-black">Agendar</span>
                   </div>
                 ))}
               </div>
@@ -230,7 +233,7 @@ export const Hero = () => {
           </motion.div>
 
           {/* Glow behind mockup */}
-          <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-linear-to-br from-blue-500/10 to-cyan-500/10 blur-2xl" />
+          <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-linear-to-br from-[#2dd4bf]/10 to-blue-500/10 blur-2xl" />
         </motion.div>
       </div>
     </Section>

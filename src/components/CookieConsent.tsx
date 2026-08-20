@@ -32,32 +32,32 @@ export function CookieConsent() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.3 }}
-          className="fixed bottom-4 right-4 z-50 w-[calc(100%-2rem)] max-w-sm rounded-2xl border border-border bg-card p-5 shadow-2xl"
+          className="fixed bottom-4 right-4 z-50 w-[calc(100%-2rem)] max-w-sm rounded-2xl border border-white/10 bg-[#0a0a0a] p-5 shadow-2xl"
         >
           <div className="flex items-start gap-3">
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10">
-              <Cookie className="size-5 text-blue-500" />
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-[#2dd4bf]/10">
+              <Cookie className="size-5 text-[#2dd4bf]" />
             </div>
             <div className="flex-1">
               <div className="flex items-center justify-between">
-                <h4 className="text-sm font-semibold">Configurações de Cookies</h4>
-                <button onClick={() => setShow(false)} className="text-muted-foreground hover:text-foreground">
+                <h4 className="text-sm font-semibold text-white">Configurações de Cookies</h4>
+                <button onClick={() => setShow(false)} className="text-gray-500 hover:text-white">
                   <X className="size-4" />
                 </button>
               </div>
-              <p className="mt-1.5 text-xs text-muted-foreground">
+              <p className="mt-1.5 text-xs text-gray-400">
                 Utilizamos cookies para melhorar sua experiência, analisar o tráfego do site e entregar conteúdo personalizado.
               </p>
               <div className="mt-3 flex gap-2">
                 <button
                   onClick={handleReject}
-                  className="flex-1 rounded-lg border border-border px-3 py-2 text-xs font-medium transition-colors hover:bg-muted"
+                  className="flex-1 rounded-lg border border-white/20 px-3 py-2 text-xs font-medium text-white transition-colors hover:bg-white/10"
                 >
                   Rejeitar
                 </button>
                 <button
                   onClick={handleAccept}
-                  className="flex-1 rounded-lg bg-primary px-3 py-2 text-xs font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                  className="flex-1 rounded-lg bg-[#2dd4bf] px-3 py-2 text-xs font-bold text-black transition-colors hover:bg-[#2dd4bf]/90"
                 >
                   Aceitar
                 </button>

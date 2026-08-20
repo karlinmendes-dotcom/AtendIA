@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { buttonVariants } from '@/components/ui/buttonVariants';
 import { PricingCard } from '@/features/billing/PricingCard';
 import { Section } from '@/features/landing/Section';
 import { useMercadoPago } from '@/hooks/useMercadoPago';
@@ -45,9 +44,10 @@ export const Pricing = () => {
       subtitle={t('section_subtitle')}
       title={t('section_title')}
       description={t('section_description')}
+      className="bg-black text-white"
     >
       <div className="mb-8 text-center">
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+        <p className="mx-auto max-w-2xl text-lg text-gray-400">
           Escolha a solução ideal para transformar seu atendimento em uma
           experiência mais profissional, organizada e inteligente.
         </p>
@@ -58,11 +58,7 @@ export const Pricing = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-50px' }}
-        className="
-          grid grid-cols-1 gap-x-6 gap-y-10
-          @xl:grid-cols-2
-          @4xl:grid-cols-3
-        "
+        className="grid grid-cols-1 gap-x-6 gap-y-10 @xl:grid-cols-2 @4xl:grid-cols-3"
       >
         {AllPlans.map(plan => (
           <motion.div key={plan.name} variants={item}>
@@ -70,11 +66,14 @@ export const Pricing = () => {
               plan={plan}
               button={(
                 <button
-                  className={buttonVariants({
-                    size: 'sm',
-                    className: `w-full transition-all hover:scale-[1.02] ${plan.popular ? 'shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30' : ''}`,
-                    variant: plan.popular ? 'default' : 'outline',
-                  })}
+                  className={`
+                    w-full rounded-full py-3 px-6 text-sm font-bold transition-all
+                    hover:scale-[1.02]
+                    ${plan.popular
+                      ? 'bg-[#2dd4bf] text-black shadow-lg shadow-[#2dd4bf]/25 hover:shadow-xl hover:shadow-[#2dd4bf]/30'
+                      : 'border border-white/20 bg-transparent text-white hover:bg-white/10'
+                    }
+                  `}
                   onClick={() => handleCheckout(plan.name, plan.implementationPrice, plan.price)}
                   disabled={isLoading}
                 >
@@ -86,9 +85,9 @@ export const Pricing = () => {
         ))}
       </motion.div>
 
-      <div className="mt-10 text-center text-sm text-muted-foreground">
+      <div className="mt-10 text-center text-sm text-gray-500">
         <p>
-          💳 Pagamento via Mercado Pago • Implementação é pagamento único •
+          Pagamento via Mercado Pago • Implementação é pagamento único •
           Mensalidade recorrente • Garantia incondicional de 30 dias
         </p>
       </div>

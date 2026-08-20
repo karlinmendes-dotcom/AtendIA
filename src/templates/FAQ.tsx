@@ -18,7 +18,7 @@ export const FAQ = () => {
   const t = useTranslations('FAQ');
 
   return (
-    <Section>
+    <Section className="bg-black">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -30,19 +30,15 @@ export const FAQ = () => {
             <AccordionItem
               key={item.q}
               value={`item-${i + 1}`}
-              className="
-                rounded-xl border border-border bg-card px-5 shadow-sm
-                transition-shadow
-                hover:shadow-md
-              "
+              className="rounded-xl border border-white/10 bg-[#0a0a0a] px-5 transition-all hover:border-white/20"
             >
-              <AccordionTrigger className="py-4 text-left text-sm font-medium">
-                {t(item.q)}
+              <AccordionTrigger className="py-4 text-left text-sm font-medium text-white">
+                <div className="flex items-center gap-3">
+                  <span className="text-[#2dd4bf]">▸</span>
+                  {t(item.q)}
+                </div>
               </AccordionTrigger>
-              <AccordionContent className="
-                pb-4 text-sm/relaxed text-muted-foreground
-              "
-              >
+              <AccordionContent className="pb-4 text-sm/relaxed text-gray-400">
                 {t(item.a)}
               </AccordionContent>
             </AccordionItem>

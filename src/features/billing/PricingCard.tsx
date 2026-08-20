@@ -12,9 +12,9 @@ const tierLabels: Record<string, string> = {
 };
 
 const tierColors: Record<string, string> = {
-  essencial: 'bg-muted text-muted-foreground',
-  profissional: 'bg-primary text-primary-foreground',
-  premium: 'bg-linear-to-r from-primary to-blue-600 text-white',
+  essencial: 'bg-white/10 text-gray-400',
+  profissional: 'bg-[#2dd4bf] text-black',
+  premium: 'bg-[#2dd4bf] text-black',
 };
 
 export const PricingCard = (props: {
@@ -26,46 +26,45 @@ export const PricingCard = (props: {
   return (
     <div
       className={`
-        relative flex flex-col rounded-2xl border px-6 py-8 text-left
-        transition-all duration-300
+        relative flex flex-col rounded-2xl border px-6 py-8 text-left transition-all duration-300
         ${props.plan.popular
-          ? 'border-2 border-primary shadow-xl shadow-primary/10 bg-card scale-[1.03]'
-          : 'border-border bg-card hover:shadow-lg'
+          ? 'border-[#2dd4bf]/30 bg-[#0a0a0a] shadow-xl shadow-[#2dd4bf]/10 scale-[1.03]'
+          : 'border-white/10 bg-[#0a0a0a] hover:border-white/20'
         }
       `}
     >
       {/* Badge */}
       <div className="mb-4">
-        <span className={`rounded-full px-3 py-1 text-xs font-bold ${tierColors[props.plan.name] || 'bg-muted text-muted-foreground'}`}>
+        <span className={`rounded-full px-3 py-1 text-xs font-bold ${tierColors[props.plan.name] || 'bg-white/10 text-gray-400'}`}>
           {tierLabels[props.plan.name] || props.plan.name}
         </span>
         {props.plan.popular && (
-          <span className="ml-2 rounded-full bg-green-500/10 px-2 py-0.5 text-[10px] font-bold text-green-600">
+          <span className="ml-2 rounded-full bg-green-500/10 px-2 py-0.5 text-[10px] font-bold text-green-400">
             75% OFF Implementação
           </span>
         )}
       </div>
 
       {/* Plan name */}
-      <div className="text-lg font-bold">
+      <div className="text-lg font-bold text-white">
         {tPlans(`${props.plan.name}_plan_name`)}
       </div>
 
-      <div className="mt-1 text-sm text-muted-foreground">
+      <div className="mt-1 text-sm text-gray-500">
         {tPlans(`${props.plan.name}_plan_description`)}
       </div>
 
       {/* Price */}
       <div className="mt-6">
         <div className="flex items-baseline gap-1">
-          <span className="text-sm text-muted-foreground">R$</span>
-          <span className="text-5xl font-extrabold tracking-tight">
+          <span className="text-sm text-gray-500">R$</span>
+          <span className="text-5xl font-extrabold tracking-tight text-white">
             {props.plan.price}
           </span>
-          <span className="text-sm text-muted-foreground">/mês</span>
+          <span className="text-sm text-gray-500">/mês</span>
         </div>
-        <div className="mt-1 text-xs text-muted-foreground">
-          Implementação: <span className="font-bold text-foreground">R$ {props.plan.implementationPrice}</span> (pagamento único)
+        <div className="mt-1 text-xs text-gray-500">
+          Implementação: <span className="font-bold text-white">R$ {props.plan.implementationPrice}</span> (pagamento único)
         </div>
       </div>
 
@@ -73,13 +72,13 @@ export const PricingCard = (props: {
       <div className="mt-6">{props.button}</div>
 
       {/* Guarantee badges */}
-      <div className="mt-3 flex items-center justify-center gap-4 text-[10px] text-muted-foreground">
+      <div className="mt-3 flex items-center justify-center gap-4 text-[10px] text-gray-500">
         <div className="flex items-center gap-1">
-          <Shield className="size-3 text-green-500" />
+          <Shield className="size-3 text-[#2dd4bf]" />
           {props.plan.popular ? '30 Dias de Garantia' : '7 Dias de Garantia'}
         </div>
         <div className="flex items-center gap-1">
-          <Clock className="size-3 text-blue-500" />
+          <Clock className="size-3 text-[#2dd4bf]" />
           Pagamento Seguro
         </div>
       </div>

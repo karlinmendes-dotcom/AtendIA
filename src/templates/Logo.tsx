@@ -1,12 +1,11 @@
 export const Logo = (props: {
   isTextHidden?: boolean;
 }) => (
-  <div className="flex items-center gap-2 text-xl font-bold">
+  <div className="flex items-center gap-2 text-xl font-bold text-white">
     <div className="
-      flex size-8 items-center justify-center rounded-lg bg-primary
-      text-primary-foreground
-    "
-    >
+      flex size-8 items-center justify-center rounded-lg bg-[#2dd4bf]
+      text-black
+    ">
       <svg
         className="size-5"
         xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +28,7 @@ export const Logo = (props: {
     {!props.isTextHidden && (
       <span>
         Atend
-        <span className="text-primary">IA</span>
+        <span className="text-[#2dd4bf]">IA</span>
       </span>
     )}
   </div>
