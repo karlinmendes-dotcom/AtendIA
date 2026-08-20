@@ -29,7 +29,7 @@ export const createPreference = action({
 
     // URL base do site
     const appUrl = process.env.NEXT_PUBLIC_APP_URL
-      || 'https://atendia.freebuff.app';
+      || 'http://localhost:3000';
 
     const result = await preference.create({
       body: {
