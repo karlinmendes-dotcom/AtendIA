@@ -17,28 +17,30 @@ export const Footer = () => {
         legalLinks={(
           <>
             <li>
-              <Link href="/">{t('terms_of_service')}</Link>
+              <Link href="/termos-de-uso">{t('terms_of_service')}</Link>
             </li>
             <li>
-              <Link href="/">{t('privacy_policy')}</Link>
+              <Link href="/politica-de-privacidade">{t('privacy_policy')}</Link>
             </li>
           </>
         )}
       >
         <li>
-          <Link href="/">{t('product')}</Link>
+          <Link href="/empresa">{t('company')}</Link>
         </li>
 
         <li>
-          <Link href="/">{t('docs')}</Link>
+          <Link href="/blog">{t('blog')}</Link>
         </li>
 
         <li>
-          <Link href="/">{t('blog')}</Link>
-        </li>
-
-        <li>
-          <Link href="/">{t('company')}</Link>
+          <a
+            href="https://wa.me/5527998041197"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
         </li>
       </CenteredFooter>
     </Section>

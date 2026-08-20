@@ -19,6 +19,16 @@ export const Navbar = () => {
               <LocaleSwitcher />
             </li>
             <li>
+              <a
+                href="https://wa.me/5527998041197"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={buttonVariants({ variant: 'outline', size: 'sm' })}
+              >
+                Fale Conosco
+              </a>
+            </li>
+            <li>
               <Link className={buttonVariants()} href="#pricing">
                 {t('sign_up')}
               </Link>
@@ -26,6 +36,10 @@ export const Navbar = () => {
           </>
         )}
       >
+        <li>
+          <Link href="/empresa">{t('about')}</Link>
+        </li>
+
         <li>
           <Link href="#features">{t('product')}</Link>
         </li>
@@ -35,11 +49,7 @@ export const Navbar = () => {
         </li>
 
         <li>
-          <Link href="#faq">{t('docs')}</Link>
-        </li>
-
-        <li>
-          <Link href="#faq">{t('about')}</Link>
+          <Link href="/blog">{t('blog')}</Link>
         </li>
       </CenteredMenu>
     </Section>
