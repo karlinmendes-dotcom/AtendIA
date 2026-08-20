@@ -42,7 +42,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/#features"
+                  href="/produto"
                   className="
                     text-sm text-muted-foreground
                     hover:text-foreground

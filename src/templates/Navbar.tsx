@@ -37,11 +37,11 @@ export const Navbar = () => {
         )}
       >
         <li>
-          <Link href="/empresa">{t('about')}</Link>
+          <Link href="/produto">{t('product')}</Link>
         </li>
 
         <li>
-          <Link href="/#features">{t('product')}</Link>
+          <Link href="/empresa">{t('about')}</Link>
         </li>
 
         <li>
