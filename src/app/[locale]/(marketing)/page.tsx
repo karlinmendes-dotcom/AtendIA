@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { AIModels } from '@/templates/AIModels';
 import { CTA } from '@/templates/CTA';
 import { FAQ } from '@/templates/FAQ';
 import { Features } from '@/templates/Features';
@@ -37,6 +38,7 @@ export default async function Index(props: IndexProps) {
       <Hero />
       <SocialProof />
       <Features />
+      <AIModels />
       <Pricing />
       <GuaranteeSection />
       <FAQ />
