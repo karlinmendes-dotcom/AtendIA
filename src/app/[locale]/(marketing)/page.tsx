@@ -10,6 +10,7 @@ import { Hero } from '@/templates/Hero';
 import { Navbar } from '@/templates/Navbar';
 import { Pricing } from '@/templates/Pricing';
 import { SocialProof } from '@/templates/SocialProof';
+import { TechLogos } from '@/components/TechLogos';
 
 type IndexProps = {
   params: Promise<{ locale: string }>;
@@ -36,6 +37,7 @@ export default async function Index(props: IndexProps) {
     <>
       <Navbar />
       <Hero />
+      <TechLogos />
       <SocialProof />
       <Features />
       <AIModels />
