@@ -9,17 +9,27 @@ export const createPreference = action({
     planId: v.string(),
     planName: v.string(),
     price: v.number(),
+    description: v.optional(v.string()),
     customerEmail: v.optional(v.string()),
     customerName: v.optional(v.string()),
   },
   handler: async (_ctx, args) => {
+    const accessToken = process.env.MERCADO_PAGO_ACCESS_TOKEN;
+    if (!accessToken) {
+      throw new Error('MERCADO_PAGO_ACCESS_TOKEN não configurado');
+    }
+
     const { default: MercadoPagoConfig, Preference } = await import('mercadopago');
 
     const client = new MercadoPagoConfig({
-      accessToken: process.env.MERCADO_PAGO_ACCESS_TOKEN!,
+      accessToken,
     });
 
     const preference = new Preference(client);
+
+    // URL base do site
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL
+      || 'https://atendia.freebuff.app';
 
     const result = await preference.create({
       body: {
@@ -27,6 +37,7 @@ export const createPreference = action({
           {
             id: args.planId,
             title: args.planName,
+            description: args.description || `Implementação do ${args.planName} - Pagamento único`,
             quantity: 1,
             unit_price: args.price,
             currency_id: 'BRL',
@@ -34,13 +45,15 @@ export const createPreference = action({
         ],
         metadata: {
           planId: args.planId,
+          type: 'implementation', // Identifica como pagamento de implementação
         },
         back_urls: {
-          success: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/sucesso`,
-          failure: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/falha`,
-          pending: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/pendente`,
+          success: `${appUrl}/sucesso`,
+          failure: `${appUrl}/falha`,
+          pending: `${appUrl}/pendente`,
         },
         auto_return: 'approved',
+        // Webhook do Convex para confirmar pagamento
         notification_url: `${process.env.NEXT_PUBLIC_CONVEX_URL?.replace('.cloud', '.site')}/api/mercadopago-webhook`,
       },
     });

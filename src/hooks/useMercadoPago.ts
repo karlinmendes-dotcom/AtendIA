@@ -14,6 +14,7 @@ export function useMercadoPago() {
     planId: string;
     planName: string;
     price: number;
+    description?: string;
     customerEmail?: string;
     customerName?: string;
   }) => {

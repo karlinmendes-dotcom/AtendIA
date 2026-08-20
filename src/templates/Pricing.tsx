@@ -11,17 +11,18 @@ export const Pricing = () => {
   const t = useTranslations('Pricing');
   const { checkout, isLoading } = useMercadoPago();
 
-  const handleCheckout = async (planName: string, price: number) => {
+  const handleCheckout = async (planName: string, implementationPrice: number, monthlyPrice: number) => {
     const planNames: Record<string, string> = {
-      essencial: 'Plano Essencial AtendIA',
-      profissional: 'Plano Profissional AtendIA',
-      premium: 'Plano Premium AtendIA',
+      essencial: 'Implementação Plano Essencial AtendIA',
+      profissional: 'Implementação Plano Profissional AtendIA',
+      premium: 'Implementação Plano Premium AtendIA',
     };
 
     await checkout({
       planId: planName,
       planName: planNames[planName] || planName,
-      price,
+      price: implementationPrice,
+      description: `Implementação do Plano ${planName.charAt(0).toUpperCase() + planName.slice(1)} - Pagamento único de R$ ${implementationPrice} + Mensalidade de R$ ${monthlyPrice}/mês`,
     });
   };
 
@@ -55,10 +56,10 @@ export const Pricing = () => {
                   className: `w-full ${plan.popular ? '' : ''}`,
                   variant: plan.popular ? 'default' : 'outline',
                 })}
-                onClick={() => handleCheckout(plan.name, plan.price)}
+                onClick={() => handleCheckout(plan.name, plan.implementationPrice, plan.price)}
                 disabled={isLoading}
               >
-                {isLoading ? 'Carregando...' : t('button_text')}
+                {isLoading ? 'Carregando...' : `Contratar — R$ ${plan.implementationPrice}`}
               </button>
             )}
           />
