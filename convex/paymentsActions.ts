@@ -19,13 +19,15 @@ export const createPreference = action({
       throw new Error('MERCADO_PAGO_ACCESS_TOKEN não configurado');
     }
 
-    const { default: MercadoPagoConfig, Preference } = await import('mercadopago');
+    // Dynamic import - access via default or named exports
+    const mpModule = await import('mercadopago');
+    const mp = mpModule.default || mpModule;
 
-    const client = new MercadoPagoConfig({
+    const client = new mp.MercadoPagoConfig({
       accessToken,
     });
 
-    const preference = new Preference(client);
+    const preference = new mp.Preference(client);
 
     // URL base do site
     const appUrl = process.env.NEXT_PUBLIC_APP_URL
@@ -45,7 +47,7 @@ export const createPreference = action({
         ],
         metadata: {
           planId: args.planId,
-          type: 'implementation', // Identifica como pagamento de implementação
+          type: 'implementation',
         },
         back_urls: {
           success: `${appUrl}/sucesso`,
@@ -53,7 +55,6 @@ export const createPreference = action({
           pending: `${appUrl}/pendente`,
         },
         auto_return: 'approved',
-        // Webhook do Convex para confirmar pagamento
         notification_url: `${process.env.NEXT_PUBLIC_CONVEX_URL?.replace('.cloud', '.site')}/api/mercadopago-webhook`,
       },
     });
