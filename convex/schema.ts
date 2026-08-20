@@ -17,7 +17,7 @@ export default defineSchema({
       v.literal('em_teste_30_dias'),
       v.literal('ativo'),
     ),
-    planId: v.string(), // ID do plano contratado (pequeno/medio/grande)
+    planId: v.string(), // ID do plano contratado (essencial/profissional/premium)
     convexDeploymentUrl: v.optional(v.string()), // URL do deployment Convex do cliente
     createdAt: v.number(),
     updatedAt: v.number(),
@@ -69,7 +69,7 @@ export default defineSchema({
 
   // Tabela de configuração dos planos (para facilitar atualizações)
   plans: defineTable({
-    planId: v.string(), // "pequeno", "medio", "grande"
+    planId: v.string(), // "essencial", "profissional", "premium"
     name: v.string(), // Nome legível
     price: v.number(), // Preço em reais
     features: v.array(v.string()), // Lista de features incluídas

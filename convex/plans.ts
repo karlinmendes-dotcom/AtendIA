@@ -73,46 +73,48 @@ export const initializePlans = mutation({
   handler: async (ctx) => {
     const plans = [
       {
-        planId: 'pequeno',
-        name: 'Plano Pequeno',
-        price: 97, // R$ 97,00
+        planId: 'essencial',
+        name: 'Plano Essencial',
+        price: 100, // R$ 100,00/mês
         features: [
-          'Atendente Virtual no WhatsApp',
-          'Agendamento simples',
-          '1 usuário administrador',
+          'Sistema de agendamento online',
+          'Página profissional',
+          'Cadastro de serviços',
+          'Configuração de horários',
+          'Cadastro de clientes',
+          'Painel administrativo básico',
+          'Personalização visual básica',
+          'Suporte básico',
+        ],
+      },
+      {
+        planId: 'profissional',
+        name: 'Plano Profissional',
+        price: 150, // R$ 150,00/mês
+        features: [
+          'Tudo do Essencial',
+          'CRM completo de clientes',
+          'Histórico de atendimentos',
+          'Automações e lembretes',
+          'Confirmações automáticas',
+          'Personalização visual avançada',
           'Relatórios básicos',
-          'Suporte por email',
-        ],
-      },
-      {
-        planId: 'medio',
-        name: 'Plano Médio',
-        price: 197, // R$ 197,00
-        features: [
-          'Atendente Virtual no WhatsApp',
-          'Agendamento avançado',
-          '3 usuários administradores',
-          'Relatórios completos',
           'Suporte prioritário',
-          'Lembretes automáticos',
-          'Integração com Google Calendar',
         ],
       },
       {
-        planId: 'grande',
-        name: 'Plano Grande',
-        price: 397, // R$ 397,00
+        planId: 'premium',
+        name: 'Plano Premium',
+        price: 200, // R$ 200,00/mês
         features: [
-          'Atendente Virtual no WhatsApp',
-          'Agendamento ilimitado',
-          'Usuários ilimitados',
-          'Relatórios avançados com IA',
-          'Suporte 24/7',
-          'Lembretes automáticos',
-          'Integração com Google Calendar',
-          'Multi-unidades',
-          'API personalizada',
-          'Treinamento dedicado',
+          'Tudo do Profissional',
+          'Assistente de IA configurado para o negócio',
+          'IA baseada nas informações do negócio',
+          'Automação de comunicação',
+          'Recursos avançados de retenção',
+          'Relatórios e indicadores',
+          'Painel administrativo avançado',
+          'Suporte prioritário e manutenção',
         ],
       },
     ];

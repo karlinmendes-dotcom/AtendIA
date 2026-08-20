@@ -29,7 +29,7 @@ export const Navbar = () => {
               </a>
             </li>
             <li>
-              <Link className={buttonVariants()} href="#pricing">
+              <Link className={buttonVariants()} href="/#pricing">
                 {t('sign_up')}
               </Link>
             </li>
@@ -41,11 +41,11 @@ export const Navbar = () => {
         </li>
 
         <li>
-          <Link href="#features">{t('product')}</Link>
+          <Link href="/#features">{t('product')}</Link>
         </li>
 
         <li>
-          <Link href="#pricing">{t('pricing')}</Link>
+          <Link href="/#pricing">{t('pricing')}</Link>
         </li>
 
         <li>

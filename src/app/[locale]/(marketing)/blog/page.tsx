@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Link } from '@/libs/I18nNavigation';
+import { Footer } from '@/templates/Footer';
+import { Navbar } from '@/templates/Navbar';
 
 export const metadata: Metadata = {
   title: 'Blog — AtendIA',
@@ -43,69 +45,64 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-16">
-      <div className="text-center">
-        <h1 className="text-3xl font-bold">Blog AtendIA</h1>
-        <p className="mt-3 text-lg text-muted-foreground">
-          Dicas, histórias e ferramentas para profissionalizar seu atendimento.
-        </p>
-      </div>
+    <>
+      <Navbar />
+      <main className="mx-auto max-w-4xl px-6 py-16">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold">Blog AtendIA</h1>
+          <p className="mt-3 text-lg text-muted-foreground">
+            Dicas, histórias e ferramentas para profissionalizar seu atendimento.
+          </p>
+        </div>
 
-      <div className="
-        mt-12 grid gap-8
-        md:grid-cols-2
-      "
-      >
-        {posts.map(post => (
-          <article
-            key={post.slug}
+        <div className="
+          mt-12 grid gap-8
+          md:grid-cols-2
+        "
+        >
+          {posts.map(post => (
+            <article
+              key={post.slug}
+              className="
+                group rounded-2xl border border-border p-6 transition-shadow
+                hover:shadow-md
+              "
+            >
+              <span className="
+                rounded-full bg-primary/10 px-3 py-1 text-xs font-medium
+                text-primary
+              "
+              >
+                {post.tag}
+              </span>
+              <h2 className="mt-4 text-xl font-semibold">{post.title}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>
+              <div className="mt-4">
+                <span className="text-xs text-muted-foreground">{post.date}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-16 rounded-2xl bg-primary/5 p-8 text-center">
+          <h2 className="text-2xl font-bold">Chega de perder tempo e clientes</h2>
+          <p className="mt-3 text-muted-foreground">
+            Enquanto você lê isso, seu potencial cliente está marcando horário com a concorrência.
+            Não perca mais tempo.
+          </p>
+          <Link
+            href="/#pricing"
             className="
-              group rounded-2xl border border-border p-6 transition-shadow
-              hover:shadow-md
+              mt-6 inline-flex items-center rounded-xl bg-primary px-6 py-3
+              text-sm font-semibold text-primary-foreground transition
+              hover:opacity-90
             "
           >
-            <span className="
-              rounded-full bg-primary/10 px-3 py-1 text-xs font-medium
-              text-primary
-            "
-            >
-              {post.tag}
-            </span>
-            <h2 className="mt-4 text-xl font-semibold">{post.title}</h2>
-            <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>
-            <div className="mt-4 flex items-center justify-between">
-              <span className="text-xs text-muted-foreground">{post.date}</span>
-              <Link
-                href={`/blog/${post.slug}`}
-                className="
-                  text-sm font-medium text-primary
-                  hover:underline
-                "
-              >
-                Ler mais →
-              </Link>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      <div className="mt-16 rounded-2xl bg-primary/5 p-8 text-center">
-        <h2 className="text-2xl font-bold">Chega de perder tempo e clientes</h2>
-        <p className="mt-3 text-muted-foreground">
-          Enquanto você lê isso, seu potencial cliente está marcando horário com a concorrência.
-          Não perca mais tempo.
-        </p>
-        <Link
-          href="/#pricing"
-          className="
-            mt-6 inline-flex items-center rounded-xl bg-primary px-6 py-3
-            text-sm font-semibold text-primary-foreground transition
-            hover:opacity-90
-          "
-        >
-          Ver Planos →
-        </Link>
-      </div>
-    </main>
+            Ver Planos →
+          </Link>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

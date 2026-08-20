@@ -42,7 +42,7 @@
   "Pricing": {
     "section_subtitle": "Plans",
     "section_title": "Choose the Ideal Plan for Your Business",
-    "section_description": "Plans starting at R$ 97/month with unconditional 30-day guarantee.",
+    "section_description": "Plans starting at R$ 100/month with unconditional 30-day guarantee.",
     "button_text": "Get Started"
   },
   "PricingPlans": {
@@ -79,6 +79,7 @@
   },
   "Footer": {
     "product": "Solutions",
+    "pricing": "Plans",
     "docs": "How It Works",
     "blog": "Blog",
     "community": "Support",

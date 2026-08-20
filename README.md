@@ -1,96 +1,69 @@
-# AtendIA - Atendentes Virtuais com IA
+# AtendIA
 
-🤖 Atendentes virtuais e sistemas de agendamento com Inteligência Artificial para pequenos e médios negócios.
+Sistema de agendamento e atendimento digital para pequenos negócios.
 
-## Sobre o Projeto
+## Sobre
 
-A AtendIA é uma agência e Micro-SaaS focada na venda de Atendentes Virtuais e Sistemas de Agendamento com Inteligência Artificial para salões de beleza, barbearias, clínicas, lava-jatos e outros negócios.
+A AtendIA é uma empresa de tecnologia especializada em ajudar pequenos negócios que trabalham com agendamento a se profissionalizar, organizar seus atendimentos e recuperar o tempo que perdem no dia a dia.
 
-### Modelo de Venda (Productized Service)
+## Stack
 
-1. O cliente acessa o site e visualiza a proposta de valor
-2. Escolhe um dos 3 planos disponíveis
-3. Realiza o pagamento via Mercado Pago
-4. É redirecionado para um formulário de onboarding
-5. Nossa equipe faz o setup/configuração
-6. Entrega o produto rodando com garantia de 30 dias
+- **Frontend:** Next.js 16, React 19, TypeScript, Tailwind CSS
+- **Backend:** Convex (banco de dados e funções serverless)
+- **Pagamentos:** Mercado Pago
+- **Chatbot:** Groq API (Llama 3.3 70B)
+- **Hospedagem:** Vercel / Freebuff Hosting
 
-## Stack Tecnológica
-
-| Tecnologia | Uso |
-|---|---|
-| **Next.js 16** | Framework React (App Router) |
-| **Convex** | Banco de dados e backend realtime |
-| **Mercado Pago** | Gateway de pagamentos |
-| **Tailwind CSS** | Estilização |
-| **Shadcn UI** | Componentes de interface |
-| **TypeScript** | Type safety |
-| **next-intl** | Internacionalização (PT/EN) |
-
-## Estrutura do Projeto
+## Estrutura
 
 ```
-├── convex/                    # Backend Convex (schema, funções)
-│   ├── schema.ts             # Schema do banco de dados
-│   ├── clients.ts            # CRUD de clientes
-│   ├── payments.ts           # Pagamentos
-│   ├── paymentsActions.ts    # Ações Mercado Pago (Node.js)
-│   ├── onboarding.ts         # Onboarding de clientes
-│   ├── plans.ts              # Planos e preços
-│   └── settings.ts           # Configurações do sistema
-├── src/
-│   ├── app/                  # Rotas Next.js
-│   │   ├── [locale]/(marketing)/    # Landing page pública
-│   │   ├── [locale]/(marketing)/sucesso/  # Pós-pagamento
-│   │   └── [locale]/(auth)/dashboard/     # Painel admin
-│   ├── components/           # Componentes reutilizáveis
-│   ├── features/             # Componentes por feature
-│   ├── hooks/                # Custom hooks
-│   ├── locales/              # Traduções (PT/EN)
-│   ├── templates/            # Templates da landing page
-│   └── utils/                # Utilitários
+src/
+├── app/                    # Rotas (Next.js App Router)
+│   └── [locale]/
+│       ├── (marketing)/    # Páginas públicas
+│       │   ├── page.tsx    # Home
+│       │   ├── blog/       # Blog
+│       │   ├── empresa/    # Sobre
+│       │   ├── contato/    # Contato
+│       │   ├── cases/      # Como funciona na prática
+│       │   ├── cancelamento/ # Política de cancelamento
+│       │   ├── politica-de-privacidade/
+│       │   ├── termos-de-uso/
+│       │   └── sucesso/    # Onboarding pós-pagamento
+│       └── (auth)/         # Dashboard administrativo
+├── components/             # Componentes React
+├── features/               # Features por domínio
+├── templates/              # Templates de página
+├── locales/                # Traduções (PT/EN)
+└── utils/                  # Utilitários
+convex/                     # Funções Convex (backend)
 ```
 
-## Variáveis de Ambiente
+## Planos
 
-### Para Vercel (Produção)
+| Plano | Mensalidade | Implementação |
+|-------|------------|---------------|
+| Essencial | R$ 100/mês | R$ 450 (pagamento único) |
+| Profissional | R$ 150/mês | R$ 750 (pagamento único) |
+| Premium | R$ 200/mês | R$ 1.000 (pagamento único) |
 
-| Variável | Descrição | Onde configurar |
-|---|---|---|
-| `NEXT_PUBLIC_CONVEX_URL` | URL do deployment Convex | Vercel → Settings → Environment Variables |
-| `MERCADO_PAGO_ACCESS_TOKEN` | Token de acesso do Mercado Pago | Vercel → Settings → Environment Variables |
-| `NEXT_PUBLIC_APP_URL` | URL da aplicação (ex: https://atendia.vercel.app) | Vercel → Settings → Environment Variables |
-
-## Deploy no Vercel
-
-1. Conecte o repositório GitHub ao Vercel
-2. Configure as variáveis de ambiente acima
-3. O deploy é automático a cada push no `main`
-
-## Desenvolvimento Local
+## Desenvolvimento
 
 ```bash
 # Instalar dependências
 npm install
 
-# Configurar variáveis de ambiente
-cp .env.example .env.local
-
 # Rodar em desenvolvimento
 npm run dev
 
-# Rodar Convex em desenvolvimento
-npx convex dev
+# Gerar tipos Convex
+npx convex dev --once
+
+# Build de produção
+npm run build
 ```
 
-## Planos
+## Contato
 
-| Plano | Preço | Destaques |
-|---|---|---|
-| **Pequeno** | R$ 97/mês | Atendente Virtual, Agendamento simples, 1 usuário |
-| **Médio** | R$ 197/mês | + Agendamento avançado, 3 usuários, Google Calendar |
-| **Grande** | R$ 397/mês | + Ilimitado, API, Multi-unidades, Treinamento |
-
-## Licença
-
-MIT License
+- WhatsApp: +55 27 99804-1197
+- E-mail: contato@atendia.com.br

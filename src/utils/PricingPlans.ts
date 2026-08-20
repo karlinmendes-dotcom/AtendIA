@@ -9,8 +9,8 @@ export const PLAN_NAME = {
 export const AllPlans: PricingPlan[] = [
   {
     name: PLAN_NAME.ESSENCIAL,
-    price: 97,
-    implementationPrice: 447,
+    price: 100,
+    implementationPrice: 450,
     limits: {
       teamMember: 1,
       website: 1,
@@ -20,8 +20,8 @@ export const AllPlans: PricingPlan[] = [
   },
   {
     name: PLAN_NAME.PROFISSIONAL,
-    price: 147,
-    implementationPrice: 747,
+    price: 150,
+    implementationPrice: 750,
     popular: true,
     limits: {
       teamMember: 3,
@@ -32,8 +32,8 @@ export const AllPlans: PricingPlan[] = [
   },
   {
     name: PLAN_NAME.PREMIUM,
-    price: 197,
-    implementationPrice: 997,
+    price: 200,
+    implementationPrice: 1000,
     limits: {
       teamMember: 10,
       website: 5,

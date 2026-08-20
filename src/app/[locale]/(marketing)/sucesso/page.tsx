@@ -107,7 +107,7 @@ export default function SucessoPage() {
         email: formData.email || undefined,
         businessType: formData.businessType,
         address: formData.address || undefined,
-        planId: 'medio', // Default plan - could be passed from payment
+        planId: 'essencial', // Default plan - should be passed from payment session
       });
 
       setSubmitted(true);

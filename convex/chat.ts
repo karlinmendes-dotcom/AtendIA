@@ -22,9 +22,9 @@ O QUE A ATENDIA OFERECE:
 - Integração com API oficial do Meta para campanhas
 
 PLANOS:
-- Essencial (R$ 97/mês + R$ 447 implementação): Agendamento online simples, sem IA
-- Profissional (R$ 147/mês + R$ 747 implementação): + 1 IA Gemini no painel, CRM, automações
-- Premium (R$ 197/mês + R$ 997 implementação): + 2 IAs Gemini, Meta API, campanhas, tudo incluso
+- Essencial (R$ 100/mês + R$ 450 implementação): Agendamento online simples, sem IA
+- Profissional (R$ 150/mês + R$ 750 implementação): + 1 IA Gemini no painel, CRM, automações
+- Premium (R$ 200/mês + R$ 1.000 implementação): + 2 IAs Gemini, Meta API, campanhas, tudo incluso
 
 GARANTIA: 30 dias incondicional. Se não gostar, devolvemos 100%.
 
