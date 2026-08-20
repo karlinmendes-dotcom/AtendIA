@@ -9,12 +9,12 @@ import { Link } from '@/libs/I18nNavigation';
 import { CalendarCheck, Users, BarChart3, Bot, Shield, Clock, Star } from 'lucide-react';
 
 const techIcons = [
-  { name: 'Convex', abbr: 'Cx', color: 'bg-emerald-500' },
-  { name: 'Groq AI', abbr: 'Gq', color: 'bg-orange-500' },
-  { name: 'Meta API', abbr: 'MA', color: 'bg-blue-600' },
-  { name: 'Mercado Pago', abbr: 'MP', color: 'bg-sky-500' },
-  { name: 'Next.js', abbr: 'Nx', color: 'bg-gray-800' },
-  { name: 'Vercel', abbr: 'Vc', color: 'bg-black' },
+  { name: 'Banco de Dados', icon: '⚡' },
+  { name: 'Inteligência Artificial', icon: '🧠' },
+  { name: 'WhatsApp API', icon: '💬' },
+  { name: 'Pagamentos', icon: '💳' },
+  { name: 'Agendamento', icon: '📅' },
+  { name: 'CRM', icon: '👥' },
 ];
 
 export const Hero = () => {
@@ -47,7 +47,7 @@ export const Hero = () => {
           className="mb-6 text-center"
         >
           <span className={badgeVariants()}>
-            🤖 Atendente Virtual com IA
+            Solução Completa para Agendamento
           </span>
         </motion.div>
 
@@ -132,11 +132,9 @@ export const Hero = () => {
           {techIcons.map(tech => (
             <div
               key={tech.name}
-              className="group flex items-center gap-2 rounded-xl border border-border bg-card/50 px-4 py-2.5 shadow-sm transition-all hover:shadow-md hover:border-blue-500/30"
+              className="group flex items-center gap-2 rounded-full border border-border bg-card/50 px-5 py-2 shadow-sm transition-all hover:shadow-md hover:border-blue-500/30"
             >
-              <div className={`flex size-8 items-center justify-center rounded-lg ${tech.color} text-xs font-bold text-white`}>
-                {tech.abbr}
-              </div>
+              <span className="text-lg">{tech.icon}</span>
               <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground">{tech.name}</span>
             </div>
           ))}

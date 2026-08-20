@@ -15,7 +15,7 @@ export function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'Olá! 👋 Sou a assistente virtual da AtendIA. Como posso te ajudar hoje? Posso te explicar nossos planos, funcionalidades ou tirar qualquer dúvida sobre o sistema.',
+      content: 'Olá! 👋 Bem-vindo à AtendIA. Como posso te ajudar hoje? Posso te explicar nossos planos, funcionalidades ou tirar qualquer dúvida sobre o sistema.',
     },
   ]);
   const [input, setInput] = useState('');
@@ -82,7 +82,7 @@ export function ChatBot() {
               </div>
               <div>
                 <h3 className="text-sm font-semibold text-white">AtendIA</h3>
-                <p className="text-xs text-blue-100">Assistente Virtual</p>
+                <p className="text-xs text-blue-100">Suporte em tempo real</p>
               </div>
             </div>
             <button
