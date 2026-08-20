@@ -1,12 +1,17 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { Section } from '@/features/landing/Section';
 
 const businessTypes = [
-  { icon: '💇', label: 'Salões de Beleza' },
-  { icon: '💈', label: 'Barbearias' },
-  { icon: '💅', label: 'Nail Designers' },
-  { icon: '💆', label: 'Clínicas de Estética' },
-  { icon: '🎨', label: 'Tatuadores & Studios' },
-  { icon: '💆‍♀️', label: 'Massagistas' },
+  '💇 Salões de Beleza',
+  '💈 Barbearias',
+  '💅 Nail Designers',
+  '💆 Clínicas de Estética',
+  '🎨 Tatuadores',
+  '💆‍♀️ Massagistas',
+  '🧖 Studios de Estética',
+  '👁️ Lash Designers',
 ];
 
 export const SocialProof = () => (
@@ -15,23 +20,41 @@ export const SocialProof = () => (
       <p className="text-sm font-semibold text-muted-foreground">
         Ideal para negócios que trabalham com agendamento
       </p>
+    </div>
+
+    {/* Animated marquee */}
+    <div className="relative mt-8 overflow-hidden">
+      {/* Fade edges */}
       <div className="
-        mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-4
+        pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r
+        from-background to-transparent
       "
+      />
+      <div className="
+        pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l
+        from-background to-transparent
+      "
+      />
+
+      <motion.div
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+        className="flex gap-8 whitespace-nowrap"
       >
-        {businessTypes.map(business => (
+        {[...businessTypes, ...businessTypes].map((business, i) => (
           <div
-            key={business.label}
+            key={`${business}-${i}`}
             className="
-              flex items-center gap-2 text-muted-foreground transition-colors
-              hover:text-foreground
+              flex items-center gap-2 rounded-full border border-border bg-card
+              px-5 py-2.5 text-sm font-medium text-muted-foreground shadow-sm
+              transition-colors
+              hover:border-primary/30 hover:text-foreground
             "
           >
-            <span className="text-2xl">{business.icon}</span>
-            <span className="text-sm font-medium">{business.label}</span>
+            {business}
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   </Section>
 );
