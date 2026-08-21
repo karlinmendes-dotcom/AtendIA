@@ -16,9 +16,9 @@ export const CTA = () => {
         buttons={
           <Link
             className="
-              inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-8 py-4
-              text-lg font-bold text-white shadow-lg shadow-[#25D366]/25
-              transition-all hover:scale-[1.03] hover:shadow-xl hover:shadow-[#25D366]/30
+              inline-flex items-center gap-2 rounded-full bg-[#2dd4bf] px-8 py-4
+              text-lg font-bold text-black shadow-lg shadow-[#2dd4bf]/25
+              transition-all hover:scale-[1.03] hover:shadow-xl hover:shadow-[#2dd4bf]/30
             "
             href="/#pricing"
           >

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Section } from '@/features/landing/Section';
+import { Plus } from 'lucide-react';
 
 const faqItems = [
   { q: 'question1' as const, a: 'answer1' as const },
@@ -30,15 +31,15 @@ export const FAQ = () => {
             <AccordionItem
               key={item.q}
               value={`item-${i + 1}`}
-              className="rounded-xl border border-white/10 bg-[#0a0a0a] px-5 transition-all hover:border-white/20"
+              className="rounded-xl border border-white/10 bg-[#0a0a0a] px-4 sm:px-5 transition-all hover:border-white/20"
             >
               <AccordionTrigger className="py-4 text-left text-sm font-medium text-white">
                 <div className="flex items-center gap-3">
-                  <span className="text-[#2dd4bf]">▸</span>
-                  {t(item.q)}
+                  <Plus className="size-4 shrink-0 text-[#2dd4bf] transition-transform group-data-[state=open]:rotate-45" />
+                  <span className="leading-snug">{t(item.q)}</span>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="pb-4 text-sm/relaxed text-gray-400">
+              <AccordionContent className="pb-4 text-sm/relaxed text-gray-400 pl-7">
                 {t(item.a)}
               </AccordionContent>
             </AccordionItem>

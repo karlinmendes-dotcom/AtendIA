@@ -6,6 +6,7 @@ import { PricingCard } from '@/features/billing/PricingCard';
 import { Section } from '@/features/landing/Section';
 import { useMercadoPago } from '@/hooks/useMercadoPago';
 import { AllPlans } from '@/utils/PricingPlans';
+import { Loader2 } from 'lucide-react';
 
 const container = {
   hidden: { opacity: 0 },
@@ -58,17 +59,20 @@ export const Pricing = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-50px' }}
-        className="grid grid-cols-1 gap-x-6 gap-y-10 @xl:grid-cols-2 @4xl:grid-cols-3"
+        className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
       >
         {AllPlans.map(plan => (
           <motion.div key={plan.name} variants={item}>
             <PricingCard
               plan={plan}
-              button={(
+              button={
                 <button
                   className={`
-                    w-full rounded-full py-3 px-6 text-sm font-bold transition-all
-                    hover:scale-[1.02]
+                    w-full rounded-full py-3.5 px-6 text-sm font-bold transition-all
+                    ${isLoading
+                      ? 'cursor-wait opacity-80'
+                      : 'hover:scale-[1.02]'
+                    }
                     ${plan.popular
                       ? 'bg-[#2dd4bf] text-black shadow-lg shadow-[#2dd4bf]/25 hover:shadow-xl hover:shadow-[#2dd4bf]/30'
                       : 'border border-white/20 bg-transparent text-white hover:bg-white/10'
@@ -77,9 +81,17 @@ export const Pricing = () => {
                   onClick={() => handleCheckout(plan.name, plan.implementationPrice, plan.price)}
                   disabled={isLoading}
                 >
-                  {isLoading ? 'Carregando...' : `Contratar — R$ ${plan.implementationPrice}`}
+                  {isLoading
+                    ? (
+                        <span className="inline-flex items-center gap-2">
+                          <Loader2 className="size-4 animate-spin" />
+                          Redirecionando...
+                        </span>
+                      )
+                    : `Contratar — R$ ${plan.implementationPrice}`
+                  }
                 </button>
-              )}
+              }
             />
           </motion.div>
         ))}

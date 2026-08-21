@@ -9,12 +9,12 @@ export const Footer = () => {
   const t = useTranslations('Footer');
 
   return (
-    <Section className="pt-0 pb-16 bg-black">
-      <footer className="mx-auto max-w-6xl">
+    <Section className="pt-0 pb-8 bg-black">
+      <footer className="mx-auto max-w-6xl px-4">
         {/* Top section */}
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 md:grid-cols-4 md:gap-10">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <Logo />
             <p className="mt-3 text-sm text-gray-500">
               Soluções digitais de agendamento para pequenos negócios.
@@ -42,7 +42,6 @@ export const Footer = () => {
               <WhatsAppIcon className="size-5" />
               Falar no WhatsApp
             </a>
-            <p className="mt-3 text-xs text-gray-600">55 27 99804-1197</p>
           </div>
 
           {/* Soluções */}
@@ -115,6 +114,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-gray-500">
           <p>{t('footer_text', { year: new Date().getFullYear(), name: AppConfig.name })}</p>
+          <p className="mt-1 text-xs text-gray-600">CNPJ: 00.000.000/0001-00</p>
         </div>
       </footer>
     </Section>

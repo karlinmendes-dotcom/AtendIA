@@ -4,14 +4,18 @@ import { motion } from 'framer-motion';
 import { Section } from '@/features/landing/Section';
 
 const businessTypes = [
-  '💇 Salões de Beleza',
-  '💈 Barbearias',
-  '💅 Nail Designers',
-  '💆 Clínicas de Estética',
-  '🎨 Tatuadores',
-  '💆‍♀️ Massagistas',
-  '🧖 Studios de Estética',
-  '👁️ Lash Designers',
+  'Salões de Beleza',
+  'Barbearias',
+  'Studio de Unhas',
+  'Clínicas de Estética',
+  'Estúdios de Tatuagem',
+  'Espaços de Massagem',
+  'Studios de Estética',
+  'Lash Designers',
+  'Consultórios',
+  'Clínicas Odontológicas',
+  'Espaços de Alongamento',
+  'Pet Shops',
 ];
 
 export const SocialProof = () => (
@@ -25,16 +29,8 @@ export const SocialProof = () => (
     {/* Animated marquee */}
     <div className="relative mt-8 overflow-hidden">
       {/* Fade edges */}
-      <div className="
-        pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r
-        from-background to-transparent
-      "
-      />
-      <div className="
-        pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l
-        from-background to-transparent
-      "
-      />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-background to-transparent" />
 
       <motion.div
         animate={{ x: ['0%', '-50%'] }}
@@ -44,12 +40,7 @@ export const SocialProof = () => (
         {[...businessTypes, ...businessTypes].map((business, i) => (
           <div
             key={`${business}-${i}`}
-            className="
-              flex items-center gap-2 rounded-full border border-border bg-card
-              px-5 py-2.5 text-sm font-medium text-muted-foreground shadow-sm
-              transition-colors
-              hover:border-primary/30 hover:text-foreground
-            "
+            className="flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-muted-foreground shadow-sm transition-colors hover:border-primary/30 hover:text-foreground"
           >
             {business}
           </div>
