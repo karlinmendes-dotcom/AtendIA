@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Section } from '@/features/landing/Section';
 import { Link } from '@/libs/I18nNavigation';
@@ -21,65 +20,35 @@ export const Hero = () => {
 
   return (
     <Section className="relative overflow-hidden py-16 sm:py-24 bg-black">
-      {/* Background */}
+      {/* Background - static, no animation */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.12, scale: 1 }}
-          transition={{ duration: 2, ease: 'easeOut' }}
-          className="absolute -top-40 -right-40 size-[500px] rounded-full bg-[#2dd4bf] blur-[150px]"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 0.08, scale: 1 }}
-          transition={{ duration: 2, delay: 0.3, ease: 'easeOut' }}
-          className="absolute -bottom-40 -left-40 size-[400px] rounded-full bg-blue-500 blur-[150px]"
-        />
+        <div className="absolute -top-40 -right-40 size-[500px] rounded-full bg-[#2dd4bf]/10 blur-[150px]" />
+        <div className="absolute -bottom-40 -left-40 size-[400px] rounded-full bg-blue-500/8 blur-[150px]" />
       </div>
 
       <div className="relative z-10">
         {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-6 text-center"
-        >
+        <div className="mb-6 text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-[#2dd4bf]/10 px-4 py-1.5 text-xs font-medium text-[#2dd4bf] sm:text-sm">
             Solução Completa para Agendamento
           </span>
-        </motion.div>
+        </div>
 
         {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl"
-        >
+        <h1 className="px-4 text-center text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
           Transforme seu atendimento em uma experiência mais{' '}
           <span className="bg-linear-to-r from-[#2dd4bf] to-blue-400 bg-clip-text text-transparent">
             profissional, organizada e inteligente
           </span>
-        </motion.h1>
+        </h1>
 
         {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mx-auto mt-5 max-w-2xl px-4 text-center text-base text-gray-400 sm:mt-6 sm:text-lg"
-        >
+        <p className="mx-auto mt-5 max-w-2xl px-4 text-center text-base text-gray-400 sm:mt-6 sm:text-lg">
           {t('description')}
-        </motion.p>
+        </p>
 
         {/* Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-8 flex flex-col items-center justify-center gap-3 px-4 sm:mt-10 sm:flex-row sm:gap-4"
-        >
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 px-4 sm:mt-10 sm:flex-row sm:gap-4">
           <Link
             className="
               inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#2dd4bf] px-8 py-3.5
@@ -107,15 +76,10 @@ export const Hero = () => {
           >
             {t('secondary_button')}
           </Link>
-        </motion.div>
+        </div>
 
         {/* Trust indicators */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4 px-4 text-xs text-gray-400 sm:gap-6 sm:text-sm"
-        >
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 px-4 text-xs text-gray-400 sm:gap-6 sm:text-sm">
           {[
             { icon: Shield, text: 'Garantia 30 dias' },
             { icon: Clock, text: 'Sem contrato' },
@@ -126,15 +90,10 @@ export const Hero = () => {
               {item.text}
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Tech Icons Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-2 px-4 sm:mt-12 sm:gap-4"
-        >
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-2 px-4 sm:mt-12 sm:gap-4">
           {techIcons.map(tech => (
             <div
               key={tech.name}
@@ -146,18 +105,12 @@ export const Hero = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Device Mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="relative mx-auto mt-12 max-w-5xl px-4 sm:mt-16"
-        >
+        {/* Device Mockup - simplified */}
+        <div className="relative mx-auto mt-12 max-w-4xl px-4 sm:mt-16">
           {/* Laptop mockup */}
           <div className="relative mx-auto max-w-4xl">
-            {/* Laptop screen */}
             <div className="overflow-hidden rounded-t-xl border border-white/10 bg-[#0a0a0a] shadow-2xl shadow-[#2dd4bf]/10 sm:rounded-t-2xl">
               {/* Browser bar */}
               <div className="flex items-center gap-2 border-b border-white/10 bg-[#111] px-3 py-2 sm:px-4 sm:py-3">
@@ -187,7 +140,7 @@ export const Hero = () => {
                   </div>
                 ))}
               </div>
-              {/* Schedule mini grid */}
+              {/* Schedule grid */}
               <div className="border-t border-white/10 p-2 sm:p-4">
                 <div className="grid grid-cols-7 gap-1 sm:gap-1.5">
                   {Array.from({ length: 14 }, (_, i) => {
@@ -211,13 +164,8 @@ export const Hero = () => {
             <div className="mx-auto h-0.5 w-1/3 rounded-b-lg bg-white/10 sm:h-1" />
           </div>
 
-          {/* Phone mockup (overlapping) */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 1 }}
-            className="absolute -right-2 bottom-0 hidden sm:block lg:-right-4"
-          >
+          {/* Phone mockup */}
+          <div className="absolute -right-2 bottom-0 hidden sm:block lg:-right-4">
             <div className="w-36 overflow-hidden rounded-2xl border-4 border-gray-800 bg-[#111] shadow-2xl sm:w-48 sm:rounded-[1.5rem]">
               <div className="bg-[#1a1a1a] px-2 py-1 text-[7px] text-gray-500 sm:px-3 sm:py-1.5 sm:text-[8px]">9:41</div>
               <div className="p-2 sm:p-3">
@@ -235,11 +183,11 @@ export const Hero = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Glow behind mockup */}
-          <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-linear-to-br from-[#2dd4bf]/10 to-blue-500/10 blur-2xl" />
-        </motion.div>
+          <div className="pointer-events-none absolute -inset-8 -z-10 rounded-3xl bg-linear-to-br from-[#2dd4bf]/8 to-blue-500/8 blur-2xl" />
+        </div>
       </div>
     </Section>
   );

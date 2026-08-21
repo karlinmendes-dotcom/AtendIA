@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { CalendarCheck, Users, Bot, MessageSquare, BarChart3, Settings } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { Section } from '@/features/landing/Section';
@@ -44,19 +43,6 @@ const featuresData = [
   },
 ];
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export const Features = () => {
   const t = useTranslations('Features');
 
@@ -67,42 +53,34 @@ export const Features = () => {
       description={t('section_description')}
       className="bg-gray-950 text-white"
     >
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: '-50px' }}
-        className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3"
-      >
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-5">
         {featuresData.map((feat) => {
           const Icon = feat.icon;
           return (
-            <motion.div
+            <div
               key={feat.titleKey}
-              variants={item}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/10 hover:-translate-y-1 sm:p-6"
             >
               {/* Gradient accent top */}
               <div className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${feat.gradient}`} />
 
               {/* Icon */}
-              <div className={`mb-4 inline-flex size-12 items-center justify-center rounded-xl bg-linear-to-br ${feat.gradient} text-white shadow-lg`}>
-                <Icon className="size-6" strokeWidth={1.5} />
+              <div className={`mb-3 inline-flex size-11 items-center justify-center rounded-xl bg-linear-to-br ${feat.gradient} text-white shadow-lg sm:mb-4 sm:size-12`}>
+                <Icon className="size-5.5 sm:size-6" strokeWidth={1.5} />
               </div>
 
               {/* Content */}
-              <h3 className="text-lg font-bold text-white">{t(feat.titleKey)}</h3>
-              <p className="mt-2 text-sm/relaxed text-gray-400">
+              <h3 className="text-base font-bold text-white sm:text-lg">{t(feat.titleKey)}</h3>
+              <p className="mt-1.5 text-xs/relaxed text-gray-400 sm:mt-2 sm:text-sm/relaxed">
                 {t(feat.descKey)}
               </p>
 
               {/* Hover glow */}
               <div className={`pointer-events-none absolute -bottom-20 -right-20 size-40 rounded-full bg-linear-to-br ${feat.gradient} opacity-0 blur-[60px] transition-opacity group-hover:opacity-20`} />
-            </motion.div>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
     </Section>
   );
 };

@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 // All SVG icons inline - 100% professional, no emojis
 const icons: Record<string, (color: string) => React.ReactNode> = {
   openai: (c) => (
@@ -169,59 +167,54 @@ export const TechMarquee = ({
   description,
   showHeader = false,
 }: TechMarqueeProps) => {
-  const duplicated = [...techs, ...techs, ...techs];
-  const reversed = direction === 'right' ? [...duplicated].reverse() : duplicated;
-
-  const xStart = direction === 'left' ? '0%' : '-33.33%';
-  const xEnd = direction === 'left' ? '-33.33%' : '0%';
+  // Only duplicate once for seamless loop (less DOM = faster)
+  const items = [...techs, ...techs];
+  const animName = direction === 'left' ? 'marquee-left' : 'marquee-right';
 
   return (
-    <section className="relative overflow-hidden bg-black py-10">
+    <section className="relative overflow-hidden bg-black py-8 sm:py-10">
       {showHeader && (
         <div className="relative z-10 mx-auto max-w-6xl px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            {subtitle && (
-              <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#2dd4bf]/10 px-4 py-1.5 text-sm font-medium text-[#2dd4bf]">
-                {subtitle}
-              </span>
-            )}
-            {title && (
-              <h2 className="mt-4 text-3xl font-extrabold text-white sm:text-4xl">
-                {title}
-              </h2>
-            )}
-            {description && (
-              <p className="mx-auto mt-4 max-w-2xl text-gray-400">
-                {description}
-              </p>
-            )}
-          </motion.div>
+          {subtitle && (
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#2dd4bf]/10 px-4 py-1.5 text-xs font-medium text-[#2dd4bf] sm:text-sm">
+              {subtitle}
+            </span>
+          )}
+          {title && (
+            <h2 className="mt-3 text-2xl font-extrabold text-white sm:text-3xl lg:text-4xl">
+              {title}
+            </h2>
+          )}
+          {description && (
+            <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-400 sm:text-base">
+              {description}
+            </p>
+          )}
         </div>
       )}
 
-      <div className="relative mt-6">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-black to-transparent sm:w-32" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-black to-transparent sm:w-32" />
+      <div className="relative mt-5">
+        {/* Fade edges */}
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 bg-linear-to-r from-black to-transparent sm:w-24" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 bg-linear-to-l from-black to-transparent sm:w-24" />
 
-        <motion.div
-          animate={{ x: [xStart, xEnd] }}
-          transition={{ duration: speed, repeat: Infinity, ease: 'linear' }}
+        {/* CSS animation - much faster than framer-motion */}
+        <div
           className="flex gap-3"
+          style={{
+            animation: `${animName} ${speed}s linear infinite`,
+            width: 'max-content',
+          }}
         >
-          {reversed.map((tech, i) => {
+          {items.map((tech, i) => {
             const IconFn = icons[tech.key];
             return (
-              <motion.div
+              <div
                 key={`${tech.key}-${i}`}
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="group flex shrink-0 items-center gap-2.5 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 transition-all hover:border-white/20 hover:bg-white/10"
+                className="group flex shrink-0 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 transition-all hover:border-white/20 hover:bg-white/10 sm:px-4 sm:py-2.5"
               >
                 <div
-                  className="flex size-10 items-center justify-center rounded-lg shadow-lg"
+                  className="flex size-9 items-center justify-center rounded-lg shadow-lg sm:size-10"
                   style={{ backgroundColor: tech.bg }}
                 >
                   {IconFn ? (
@@ -230,14 +223,26 @@ export const TechMarquee = ({
                     <span className="text-sm font-bold text-white">{tech.label[0]}</span>
                   )}
                 </div>
-                <span className="whitespace-nowrap text-xs font-medium text-gray-400 group-hover:text-white">
+                <span className="whitespace-nowrap text-[10px] font-medium text-gray-400 group-hover:text-white sm:text-xs">
                   {tech.label}
                 </span>
-              </motion.div>
+              </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
+
+      {/* CSS keyframes injected via style tag */}
+      <style jsx>{`
+        @keyframes marquee-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
     </section>
   );
 };
